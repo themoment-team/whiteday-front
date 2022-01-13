@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore directories
+
+/.vscode
+/.github
+/.yarn
+/node_modules
