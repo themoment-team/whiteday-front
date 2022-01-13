@@ -1,9 +1,13 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as P from "./Pages";
 
 const App: React.FC = () => (
-  <>
-    캔디머신에 사탕을 담아봐!
-  </>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/"></Route>
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;
