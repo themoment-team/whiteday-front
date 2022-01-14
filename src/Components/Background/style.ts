@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface brownBoxVisibleProps {
-  visible: boolean;
+  brownBoxVisible: boolean;
 }
 
 export const Background = styled.div`
@@ -12,7 +12,7 @@ export const Background = styled.div`
 
 export const PinkBackground = styled.div<brownBoxVisibleProps>`
   width: 100%;
-  height: ${({visible})=> (visible ? 65 : 100)}vh;
+  height: ${({brownBoxVisible})=> (brownBoxVisible ? 65 : 100)}vh;
   background-color: #ffecdb;
 `;
 
