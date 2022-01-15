@@ -8,8 +8,9 @@ interface brownBoxVisibleProps{
 const Background: React.FC<brownBoxVisibleProps> = ({brownBoxVisible}) => {
   return (
     <S.Background>
-      <S.PinkBackground brownBoxVisible={brownBoxVisible} />
-      {brownBoxVisible && <S.BrownBackground />}
+      <S.PinkBackground>
+        {brownBoxVisible && <S.BrownBackground />}
+      </S.PinkBackground>
     </S.Background>
   );
 }
