@@ -13,9 +13,9 @@ export const PinkBackground = styled.div`
 `;
 
 export const BrownBackground = styled.div`
-  width: 600px;
+  width: 100%;
   height: 35vh;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  top: 65vh;
   background-color: #885252;
 `;
