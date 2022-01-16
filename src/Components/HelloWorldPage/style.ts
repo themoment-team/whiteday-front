@@ -1,7 +1,6 @@
 import styled from "styled-components";
-
-interface textShadowVisibleProps {
-  textShadowVisible: boolean;
+interface Login {
+  active: boolean;
 }
 
 export const MainBox = styled.div`
@@ -11,17 +10,16 @@ export const MainBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #bbb;
   * {
     margin: 0;
     padding: 0;
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h1<Login>`
   font-size: 25px;
-  margin-top: 225px;
-  margin-bottom: 66px;
+  margin-top: ${({ active }) => (active ? "24" : "13")}vh;
+  margin-bottom: 7vh;
 `;
 
 export const Pink = styled.span`
@@ -29,15 +27,21 @@ export const Pink = styled.span`
   font-weight: bold;
 `;
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.div<Login>`
+  position: relative;
   width: 549px;
-  height: 400px;
+  height: ${({ active }) => (active ? "400" : "64vh")};
   box-sizing: border-box;
   background-color: #ffd8e6;
   border-radius: 20px;
   border-bottom: 5px solid #885252;
   padding: 50px 80px;
   margin-bottom: 56px;
+  svg {
+    position: absolute;
+    left: 460px;
+    top: 530px;
+  }
 `;
 
 export const Choose = styled.h2`
@@ -48,21 +52,7 @@ export const Choose = styled.h2`
   cursor: pointer;
   color: white;
   text-shadow: 2px 2px 2px #fd5793;
-`;
-
-export const Button = styled.div`
-  width: 549px;
-  height: 74px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  cursor: pointer;
-  border-bottom: 5px solid #885252;
-  font-weight: bold;
-  font-size: 20px;
-  color: #fd5793;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  text-align: center;
-  line-height: 74px;
+  margin-bottom: 36px;
 `;
 
 export const InputSection = styled.div`
@@ -85,4 +75,21 @@ export const Input = styled.input`
   outline: 0;
   padding-left: 40px;
   font-size: 12px;
+  margin-bottom: 4vh;
+  margin-top: 15px;
+`;
+
+export const Button = styled.div`
+  width: 549px;
+  height: 74px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  border-bottom: 5px solid #885252;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fd5793;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  text-align: center;
+  line-height: 74px;
 `;
