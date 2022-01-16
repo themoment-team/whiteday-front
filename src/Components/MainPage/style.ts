@@ -5,20 +5,35 @@ export const MainPage = styled.div`
   width: 600px;
   height: 100vh;
   margin: 0 auto;
+  position: relative;
   @media ${device.mobile} {
     width: 100vw;
   }
 `;
 
-export const Explanation = styled.p`
+export const Explanation = styled.div`
   position: relative;
   top: 10vh;
   text-align: center;
   z-index: 1;
-  margin: 0;
-  font-size: 30px;
   font-weight: bold;
   color: #885252;
+`;
+
+export const UserExplanation = styled.p`
+  font-size: 30px;
+  margin: 0;
+  @media ${device.mobile} {
+    font-size: 5vw;
+  }
+`;
+
+export const CountExplanation = styled.p`
+  font-size: 24px;
+  margin: 0;
+  @media ${device.mobile} {
+    font-size: 4vw;
+  }
 `;
 
 export const Pink = styled.span`
@@ -28,9 +43,7 @@ export const Pink = styled.span`
 export const CandyMachine = styled.img`
   width: 100%;
   position: relative;
-  top: 13vh;
   z-index: 1;
-  @media ${device.mobile} {
-    top: 17vh;
-  }
+  top: 43vh;
+  transform: translateY(-50%);
 `;
