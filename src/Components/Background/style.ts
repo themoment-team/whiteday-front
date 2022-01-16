@@ -7,6 +7,7 @@ export const Background = styled.div`
   margin: 0 auto;
   box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
   position: absolute;
+  z-index: 0;
   @media ${device.mobile} {
     width: 100vw;
   }

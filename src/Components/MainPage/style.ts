@@ -30,7 +30,7 @@ export const Pink = styled.span`
 export const CandyMachine = styled.img`
   width: 100%;
   position: relative;
-  top: 16vh;
+  top: 13vh;
   z-index: 1;
   @media ${device.mobile} {
     top: 17vh;
