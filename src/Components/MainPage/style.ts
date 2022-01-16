@@ -7,8 +7,6 @@ export const MainPage = styled.div`
   margin: 0 auto;
   @media ${device.mobile} {
     width: 100vw;
-    /* display: flex; */
-    /* align-items: center; */
   }
 `;
 
