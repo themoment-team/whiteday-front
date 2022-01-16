@@ -3,8 +3,7 @@ import device from "../../Shared/Config";
 
 export const Background = styled.div`
   width: 600px;
-  height: 100vh;
-  margin: 0 auto;
+  height: 100%;
   box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
   position: absolute;
   z-index: 0;
