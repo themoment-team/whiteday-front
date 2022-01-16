@@ -14,7 +14,6 @@ export const Explanation = styled.div`
   position: relative;
   top: 10vh;
   text-align: center;
-  z-index: 1;
   font-weight: bold;
   color: #885252;
 `;
@@ -42,7 +41,6 @@ export const Pink = styled.span`
 export const CandyMachine = styled.img`
   width: 100%;
   position: relative;
-  z-index: 1;
   top: 43vh;
   transform: translateY(-50%);
 `;
