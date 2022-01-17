@@ -5,7 +5,7 @@ import * as P from "./Pages";
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<P.ServiceEnd />}/>
+      <Route path="/" />
     </Routes>
   );
 };
