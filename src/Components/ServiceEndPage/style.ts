@@ -28,7 +28,7 @@ export const Logo = styled.img`
   top: 25%;
 `
 
-export const ExplainationBox = styled.p`
+export const Explaination = styled.p`
   margin: 0;
   position: relative;
   top: 28%;
@@ -41,11 +41,34 @@ export const ExplainationBox = styled.p`
   }
 `;
 
-export const Copyright = styled.p`
+export const TeamExplainationBox = styled.div`
   color: #885252;
   position: relative;
-  top: 60%;
-  margin: 0;
-  text-align: center;
+  top: 50%;
   font-size: 10px;
+`;
+
+export const TeamExplaination = styled.div`
+  width: 210px;
+  margin: 0 auto;
+`
+
+export const TeamName = styled.p`
+  position: relative;
+  bottom: 52px;
+  display: inline-block;
+  margin: 0;
+`
+
+export const ExplainMembers = styled.p`
+  position: relative;
+  display: inline-block;
+  left: 8%;
+  margin: 0;
+`;
+
+export const Copyright = styled.p`
+  margin: 0;
+  margin-top: 20px;
+  text-align: center;
 `;
