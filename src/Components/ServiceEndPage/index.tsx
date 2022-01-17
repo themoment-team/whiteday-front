@@ -24,9 +24,12 @@ const ServiceEndPage: React.FC = () => {
           <S.TeamExplaination>
             <S.TeamName>the_moment</S.TeamName>
             <S.ExplainMembers>
-              FE : 김형록, 변찬우, 유시온 <br />
-              BE : 양시준, 조재영 <br />
-              DEVOPS : 노가성, 김시훈 <br />
+              FE : 김형록, 변찬우, 유시온
+              <br />
+              BE : 양시준, 조재영
+              <br />
+              DEVOPS : 노가성, 김시훈
+              <br />
               DESIGN : 양세련, 안진형
             </S.ExplainMembers>
           </S.TeamExplaination>
