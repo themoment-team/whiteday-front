@@ -18,8 +18,10 @@ export const MainBox = styled.div`
 
 export const Title = styled.h1<Login>`
   font-size: 25px;
-  margin-top: ${({ active }) => (active ? "24" : "13")}vh;
-  margin-bottom: 7vh;
+  margin-top: ${({ active }) => (active ? "20" : "10")}vh;
+  margin-bottom: 5vh;
+  color: #885252;
+  position: relative;
 `;
 
 export const Pink = styled.span`
@@ -30,17 +32,17 @@ export const Pink = styled.span`
 export const LoginBox = styled.div<Login>`
   position: relative;
   width: 549px;
-  height: ${({ active }) => (active ? "400" : "64vh")};
+  height: ${({ active }) => (active ? "43" : "60")}vh;
   box-sizing: border-box;
   background-color: #ffd8e6;
   border-radius: 20px;
   border-bottom: 5px solid #885252;
-  padding: 50px 80px;
-  margin-bottom: 56px;
+  padding: 5vh 80px 0;
+  margin-bottom: 3vh;
   svg {
     position: absolute;
-    left: 460px;
-    top: 530px;
+    left: 85%;
+    top: ${({ active }) => (active ? "82" : "88")}%;
   }
 `;
 
@@ -52,7 +54,7 @@ export const Choose = styled.h2`
   cursor: pointer;
   color: white;
   text-shadow: 2px 2px 2px #fd5793;
-  margin-bottom: 36px;
+  margin-bottom: 3.5vh;
 `;
 
 export const InputSection = styled.div`
@@ -63,11 +65,13 @@ export const InputSection = styled.div`
 
 export const Name = styled.div`
   color: #fd5793;
+  font-size: 15px;
+  margin-left: 12px;
 `;
 
 export const Input = styled.input`
-  width: 389px;
-  height: 46px;
+  width: 390px;
+  height: 4.8vh;
   box-sizing: border-box;
   background: #ffffff;
   border: 3px dashed rgba(134, 79, 79, 0.98);
@@ -76,12 +80,18 @@ export const Input = styled.input`
   padding-left: 40px;
   font-size: 12px;
   margin-bottom: 4vh;
-  margin-top: 15px;
+
+  &::placeholder {
+    font-family: "yg-jalnan";
+    color: #b0b0b0;
+  }
+
+  font-family: "yg-jalnan";
 `;
 
 export const Button = styled.div`
   width: 549px;
-  height: 74px;
+  height: 7.9vh;
   background-color: #ffffff;
   border-radius: 30px;
   cursor: pointer;
@@ -91,5 +101,5 @@ export const Button = styled.div`
   color: #fd5793;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
-  line-height: 74px;
+  line-height: 7.9vh;
 `;
