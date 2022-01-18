@@ -5,7 +5,8 @@ import * as P from "./Pages";
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" />
+      <Route path="/" element={<P.Main />} />
+      <Route path="/leaveCandy" element={<P.LeaveCandy />} />
     </Routes>
   );
 };
