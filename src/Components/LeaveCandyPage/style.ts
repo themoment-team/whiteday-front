@@ -67,6 +67,23 @@ export const CandyColor = styled.div`
   }
 `;
 
+export const CandyShape = styled.div`
+  margin: 0 auto;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 80px;
+  height: 80px;
+  @media (max-width: 370px) {
+    width: 65px;
+    height: 65px;
+  }
+
+  &:active {
+    transform: scale(1.3);
+  }
+`;
+
 export const NextButton = styled.button`
   width: 80%;
   height: 50px;

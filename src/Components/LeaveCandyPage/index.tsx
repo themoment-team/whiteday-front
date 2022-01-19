@@ -1,14 +1,18 @@
+import { useState } from "react";
 import Background from "../Background";
 import CandyDesign from "./CandyDesign";
 import * as S from "./style";
 
 function LeaveCandyPage() {
+  const [pageNum, setPageNum] = useState(0);
   return (
     <S.Main>
-      <Background brownBoxVisible={true} />
+      <Background brownBoxVisible={pageNum < 2} />
       <S.Position>
-        <CandyDesign />
-        <S.NextButton>다음으로</S.NextButton>
+        <CandyDesign pageNum={pageNum} />
+        <S.NextButton onClick={() => setPageNum(pageNum + 1)}>
+          다음으로
+        </S.NextButton>
       </S.Position>
     </S.Main>
   );
