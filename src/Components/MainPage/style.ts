@@ -5,14 +5,26 @@ export const MainPage = styled.div`
   width: 600px;
   height: 100vh;
   margin: 0 auto;
+  /* display: flex;
+  align-items: center; */
   @media ${device.mobile} {
     width: 100vw;
   }
+  /* @media (max-height: 1080px){
+    overflow: scroll;
+    height: 1080px;
+  } */
 `;
+
+export const Content = styled.div`
+  width: 100%;
+  position: relative;
+  height: 750px;
+  top: 7%;
+`
 
 export const Explanation = styled.div`
   position: relative;
-  top: 10vh;
   text-align: center;
   font-weight: bold;
   color: #885252;
@@ -40,7 +52,6 @@ export const Pink = styled.span`
 
 export const CandyMachine = styled.img`
   width: 100%;
+  top: 5%;
   position: relative;
-  top: 43vh;
-  transform: translateY(-50%);
 `;
