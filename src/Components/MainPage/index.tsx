@@ -7,7 +7,7 @@ const MainPage: React.FC = () => {
   const candyAmount: number = 999;
   return (
     <S.MainPage>
-      <Background brownBoxVisible={true} />
+      <Background brownBoxVisible={true} maxHeight={900}/>
       <S.Content>
         <S.Explanation>
           <S.UserExplanation>

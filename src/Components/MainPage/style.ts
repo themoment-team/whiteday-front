@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import device from "../../Shared/Config";
 
+const maxHeight = "(max-height: 900px) and (min-width: 600px)";
+
 export const MainPage = styled.div`
   width: 600px;
   height: 100vh;
@@ -10,10 +12,10 @@ export const MainPage = styled.div`
   @media ${device.mobile} {
     width: 100vw;
   }
-  /* @media (max-height: 1080px){
+  @media ${maxHeight}{
     overflow: scroll;
-    height: 1080px;
-  } */
+    height: 900px;
+  }
 `;
 
 export const Content = styled.div`
