@@ -2,12 +2,13 @@ import React from "react";
 import * as S from "./style";
 
 interface brownBoxVisibleProps{
-  brownBoxVisible: boolean;
-}
+  brownBoxVisible: boolean,
+  maxHeight: number,
+};
 
-const Background: React.FC<brownBoxVisibleProps> = ({brownBoxVisible}) => {
+const Background: React.FC<brownBoxVisibleProps> = ({brownBoxVisible, maxHeight}) => {
   return (
-    <S.Background>
+    <S.Background maxHeight={maxHeight}>
       <S.PinkBackground>
         {brownBoxVisible && <S.BrownBackground />}
       </S.PinkBackground>
