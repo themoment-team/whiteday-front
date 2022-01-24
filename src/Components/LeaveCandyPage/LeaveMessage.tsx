@@ -1,6 +1,13 @@
+import React from "react";
 import * as S from "./style";
+import { CandyI } from "./index";
 
-function LeaveMessage() {
+type PropsType = {
+  candyData: CandyI;
+  changeCandyData: (data: CandyI) => void;
+};
+
+const LeaveMessage: React.FC<PropsType> = ({ candyData, changeCandyData }) => {
   return (
     <S.Circle>
       <S.InputNickname
@@ -14,6 +21,6 @@ function LeaveMessage() {
       />
     </S.Circle>
   );
-}
+};
 
 export default LeaveMessage;
