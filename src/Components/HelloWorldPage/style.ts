@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import device from "../../Shared/Config";
+
 interface Login {
   active: boolean;
 }
@@ -13,6 +15,9 @@ export const MainBox = styled.div`
   * {
     margin: 0;
     padding: 0;
+  }
+  @media ${device.mobile} {
+    width: 100vw;
   }
 `;
 
@@ -31,8 +36,8 @@ export const Pink = styled.span`
 
 export const LoginBox = styled.div<Login>`
   position: relative;
-  width: 549px;
-  height: ${({ active }) => (active ? "43" : "60")}vh;
+  width: 550px;
+  height: ${({ active }) => (active ? "400" : "600")}px;
   box-sizing: border-box;
   background-color: #ffd8e6;
   border-radius: 20px;
@@ -43,6 +48,10 @@ export const LoginBox = styled.div<Login>`
     position: absolute;
     left: 85%;
     top: ${({ active }) => (active ? "82" : "88")}%;
+  }
+  @media ${device.mobile} {
+    width: 90vw;
+    padding: 5vh 20px 0;
   }
 `;
 
@@ -71,7 +80,7 @@ export const Name = styled.div`
 
 export const Input = styled.input`
   width: 390px;
-  height: 4.8vh;
+  height: 46px;
   box-sizing: border-box;
   background: #ffffff;
   border: 3px dashed rgba(134, 79, 79, 0.98);
@@ -91,7 +100,7 @@ export const Input = styled.input`
 
 export const Button = styled.div`
   width: 549px;
-  height: 7.9vh;
+  height: 74px;
   background-color: #ffffff;
   border-radius: 30px;
   cursor: pointer;
@@ -102,4 +111,7 @@ export const Button = styled.div`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
   line-height: 7.9vh;
+  @media ${device.mobile} {
+    width: 90vw;
+  }
 `;

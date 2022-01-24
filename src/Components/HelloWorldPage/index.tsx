@@ -4,13 +4,10 @@ import * as I from "../../Assets/SVG";
 import Background from "../Background";
 import axios from "axios";
 
+const joinData: Array<String> = [];
+const loginData: Array<String> = [];
 const SignUp: React.FC = () => {
   const value = [
-    {
-      name: "닉네임",
-      placeholder: "특수문자를 제외한 10자 이내",
-      maxLength: 10,
-    },
     { name: "아이디", placeholder: "영문, 숫자를 포함한 5자 이상" },
     {
       name: "비밀번호",
@@ -26,25 +23,30 @@ const SignUp: React.FC = () => {
       maxLength: 20,
       minLength: 4,
     },
+    {
+      name: "닉네임",
+      placeholder: "특수문자를 제외한 10자 이내",
+      maxLength: 10,
+    },
   ];
+
   return (
-    <>
-      <S.InputSection>
-        {value.map((value, index) => {
-          return (
-            <>
-              <S.Name>{value.name}</S.Name>
-              <S.Input
-                placeholder={value.placeholder}
-                type={value.type}
-                maxLength={value.maxLength}
-                minLength={value.minLength}
-              ></S.Input>
-            </>
-          );
-        })}
-      </S.InputSection>
-    </>
+    <S.InputSection>
+      {value.map((value, index) => {
+        return (
+          <>
+            <S.Name>{value.name}</S.Name>
+            <S.Input
+              placeholder={value.placeholder}
+              type={value.type}
+              maxLength={value.maxLength}
+              minLength={value.minLength}
+              onChange={(e) => (joinData[index] = e.target.value)}
+            ></S.Input>
+          </>
+        );
+      })}
+    </S.InputSection>
   );
 };
 
@@ -62,6 +64,7 @@ const SignIn: React.FC = () => {
             <S.Input
               placeholder={value.placeholder}
               type={value.type}
+              onChange={(e) => (loginData[index] = e.target.value)}
             ></S.Input>
           </>
         );
@@ -72,7 +75,11 @@ const SignIn: React.FC = () => {
 
 const TryJoin = async () => {
   // try {
-  //   const res: any = await axios.post("/join");
+  //   const res = await axios.post("/join", {
+  //     id: joinData[0],
+  //     pw: joinData[1],
+  //     nickName: joinData[3],
+  //   });
   // } catch (err) {
   //   console.log(err);
   // }
@@ -80,7 +87,10 @@ const TryJoin = async () => {
 
 const TryLogin = async () => {
   // try {
-  //   const res: any = await axios.post("/login");
+  //   const res = await axios.post("/login", {
+  //     id: loginData[0],
+  //     pw: loginData[1],
+  //   });
   // } catch (err) {
   //   console.log(err);
   // }
@@ -88,6 +98,7 @@ const TryLogin = async () => {
 
 const HelloWorldPage: React.FC = () => {
   const [login, setLogin] = useState(false);
+  const [shadow, setShadow] = useState(true);
   return (
     <S.MainBox>
       <Background brownBoxVisible={false} />
