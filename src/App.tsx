@@ -5,8 +5,8 @@ import * as P from "./Pages";
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" />
-      <Route element={<P.NotFound />} />
+      <Route path="/" element={<P.Main />}/>
+      <Route path="*" element={<P.NotFound />} />
     </Routes>
   );
 };
