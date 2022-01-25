@@ -5,16 +5,19 @@ interface Login {
   active: boolean;
 }
 
+interface Shadow {
+  pinkShadow: boolean;
+}
+
 export const MainBox = styled.div`
   width: 600px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   * {
-    margin: 0;
-    padding: 0;
+    overflow-x: hidden;
   }
   @media ${device.mobile} {
     width: 100vw;
@@ -22,54 +25,56 @@ export const MainBox = styled.div`
 `;
 
 export const Title = styled.h1<Login>`
-  font-size: 25px;
-  margin-top: ${({ active }) => (active ? "20" : "10")}vh;
-  margin-bottom: 5vh;
-  color: #885252;
   position: relative;
+  font-size: 25px;
+  margin-top: ${({ active }) => (active ? "170" : "92")}px;
+  margin-bottom: 60px;
+  color: #885252;
 `;
 
 export const Pink = styled.span`
   color: #ff7bab;
-  font-weight: bold;
 `;
 
 export const LoginBox = styled.div<Login>`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 550px;
   height: ${({ active }) => (active ? "400" : "600")}px;
-  box-sizing: border-box;
   background-color: #ffd8e6;
   border-radius: 20px;
   border-bottom: 5px solid #885252;
-  padding: 5vh 80px 0;
-  margin-bottom: 3vh;
+  margin-bottom: 28px;
   svg {
     position: absolute;
-    left: 85%;
+    left: 81%;
     top: ${({ active }) => (active ? "82" : "88")}%;
   }
   @media ${device.mobile} {
-    width: 90vw;
-    padding: 5vh 20px 0;
+    width: 450px;
+  }
+
+  @media (max-width: 450px) {
+    width: 350px;
   }
 `;
 
-export const Choose = styled.h2`
-  display: inline-block;
-  text-align: center;
-  font-size: 20px;
-  width: 50%;
-  cursor: pointer;
-  color: white;
-  text-shadow: 2px 2px 2px #fd5793;
-  margin-bottom: 3.5vh;
+export const ChooseSection = styled.div`
+  width: 270px;
+  margin: 50px 0 30px;
 `;
 
-export const InputSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+export const Choose = styled.span<Shadow>`
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  text-shadow: ${({ pinkShadow }) =>
+    pinkShadow ? "2px 2px 2px #fd5793" : null};
 `;
 
 export const Name = styled.div`
@@ -88,14 +93,21 @@ export const Input = styled.input`
   outline: 0;
   padding-left: 40px;
   font-size: 12px;
-  margin-bottom: 4vh;
+  margin-bottom: 40px;
+  font-family: "yg-jalnan";
 
   &::placeholder {
     font-family: "yg-jalnan";
     color: #b0b0b0;
   }
 
-  font-family: "yg-jalnan";
+  @media ${device.mobile} {
+    width: 300px;
+  }
+
+  @media (max-width: 450px) {
+    width: 250px;
+  }
 `;
 
 export const Button = styled.div`
@@ -105,13 +117,21 @@ export const Button = styled.div`
   border-radius: 30px;
   cursor: pointer;
   border-bottom: 5px solid #885252;
-  font-weight: bold;
   font-size: 20px;
   color: #fd5793;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
-  line-height: 7.9vh;
+  line-height: 74px;
+
+  @media (max-height: 920px) {
+    margin-bottom: 40px;
+  }
+
   @media ${device.mobile} {
-    width: 90vw;
+    width: 450px;
+  }
+
+  @media (max-width: 450px) {
+    width: 350px;
   }
 `;

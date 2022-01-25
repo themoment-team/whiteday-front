@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
 import Background from "../Background";
-import axios from "axios";
+// import axios from "axios";
 
-const joinData: Array<String> = [];
-const loginData: Array<String> = [];
+// const joinData: Array<String> = [];
+// const loginData: Array<String> = [];
+
 const SignUp: React.FC = () => {
   const value = [
     { name: "아이디", placeholder: "영문, 숫자를 포함한 5자 이상" },
@@ -31,7 +32,7 @@ const SignUp: React.FC = () => {
   ];
 
   return (
-    <S.InputSection>
+    <div>
       {value.map((value, index) => {
         return (
           <>
@@ -41,22 +42,22 @@ const SignUp: React.FC = () => {
               type={value.type}
               maxLength={value.maxLength}
               minLength={value.minLength}
-              onChange={(e) => (joinData[index] = e.target.value)}
+              // onChange={(e) => (joinData[index] = e.target.value)}
             ></S.Input>
           </>
         );
       })}
-    </S.InputSection>
+    </div>
   );
 };
 
 const SignIn: React.FC = () => {
-  const value: any = [
+  const value = [
     { name: "아이디", placeholder: "" },
     { name: "비밀번호", placeholder: "", type: "password" },
   ];
   return (
-    <S.InputSection>
+    <div>
       {value.map((value: any, index: number) => {
         return (
           <>
@@ -64,12 +65,12 @@ const SignIn: React.FC = () => {
             <S.Input
               placeholder={value.placeholder}
               type={value.type}
-              onChange={(e) => (loginData[index] = e.target.value)}
+              // onChange={(e) => (loginData[index] = e.target.value)}
             ></S.Input>
           </>
         );
       })}
-    </S.InputSection>
+    </div>
   );
 };
 
@@ -98,31 +99,42 @@ const TryLogin = async () => {
 
 const HelloWorldPage: React.FC = () => {
   const [login, setLogin] = useState(false);
-  const [shadow, setShadow] = useState(true);
+  const [signupShadow, setSignupShadow] = useState(true);
+  const [signinShadow, setSigninShadow] = useState(false);
   return (
     <S.MainBox>
       <Background brownBoxVisible={false} />
       <S.Title active={login}>
-        캔디머신<S.Pink>에</S.Pink> 사탕<S.Pink>을 담아봐</S.Pink>
+        캔디머신<S.Pink>에</S.Pink> 사탕<S.Pink>을 담아봐!</S.Pink>
       </S.Title>
+
       <S.LoginBox active={login}>
-        <S.Choose
-          onClick={() => {
-            setLogin(false);
-          }}
-        >
-          회원가입
-        </S.Choose>
-        <S.Choose
-          onClick={() => {
-            setLogin(true);
-          }}
-        >
-          로그인
-        </S.Choose>
+        <S.ChooseSection>
+          <S.Choose
+            pinkShadow={signupShadow}
+            onClick={() => {
+              setLogin(false);
+              setSignupShadow(true);
+              setSigninShadow(false);
+            }}
+          >
+            회원가입
+          </S.Choose>
+          <S.Choose
+            pinkShadow={signinShadow}
+            onClick={() => {
+              setLogin(true);
+              setSigninShadow(true);
+              setSignupShadow(false);
+            }}
+          >
+            로그인
+          </S.Choose>
+        </S.ChooseSection>
         {!login ? <SignUp /> : <SignIn />}
         <I.MiniCandy />
       </S.LoginBox>
+
       {!login ? (
         <S.Button onClick={TryJoin}>캔디머신 생성하기</S.Button>
       ) : (
