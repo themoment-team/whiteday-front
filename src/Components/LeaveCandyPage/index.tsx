@@ -8,6 +8,7 @@ import * as S from "./style";
 export interface CandyI {
   color: string;
   shape: string;
+  title: string;
   message: string;
 }
 
@@ -17,14 +18,19 @@ function LeaveCandyPage() {
   const [candyData, setCandyData] = useState<CandyI>({
     color: "",
     shape: "",
+    title: "",
     message: "",
   });
 
   const onClick = () => {
     if (pageNum >= 2) {
+      // candy 생성
       console.log({ ...candyData });
       navigate("/");
-    } else {
+    } else if (
+      (candyData.color && pageNum === 0) ||
+      (candyData.shape && pageNum === 1)
+    ) {
       setPageNum(pageNum + 1);
     }
   };

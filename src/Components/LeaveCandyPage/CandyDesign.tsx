@@ -11,7 +11,7 @@ const ColorList: Array<string> = [
   "F1F1F1",
 ];
 const ShapeList: Array<string> = [
-  "",
+  "none",
   "star",
   "heart",
   "diamond",
