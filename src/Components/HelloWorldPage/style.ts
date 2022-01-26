@@ -62,8 +62,11 @@ export const LoginBox = styled.div<Login>`
 `;
 
 export const ChooseSection = styled.div`
-  width: 270px;
+  width: 350px;
   margin: 50px 0 30px;
+  @media ${device.mobile} {
+    width: 270px;
+  }
 `;
 
 export const Choose = styled.span<Shadow>`

@@ -32,10 +32,10 @@ const SignUp: React.FC = () => {
   ];
 
   return (
-    <div>
+    <>
       {value.map((value, index) => {
         return (
-          <>
+          <div key={index}>
             <S.Name>{value.name}</S.Name>
             <S.Input
               placeholder={value.placeholder}
@@ -44,10 +44,10 @@ const SignUp: React.FC = () => {
               minLength={value.minLength}
               // onChange={(e) => (joinData[index] = e.target.value)}
             ></S.Input>
-          </>
+          </div>
         );
       })}
-    </div>
+    </>
   );
 };
 
@@ -57,20 +57,20 @@ const SignIn: React.FC = () => {
     { name: "비밀번호", placeholder: "", type: "password" },
   ];
   return (
-    <div>
+    <>
       {value.map((value: any, index: number) => {
         return (
-          <>
+          <div key={index}>
             <S.Name>{value.name}</S.Name>
             <S.Input
               placeholder={value.placeholder}
               type={value.type}
               // onChange={(e) => (loginData[index] = e.target.value)}
             ></S.Input>
-          </>
+          </div>
         );
       })}
-    </div>
+    </>
   );
 };
 
