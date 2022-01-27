@@ -24,22 +24,22 @@ export const ContentBox = styled.div`
 `;
 
 export const Content = styled.div`
-
+  width: 45%;
 `;
 
 export const NotFoundImg = styled.img`
-  width: 45%;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
 `
 export const Explaination = styled.p`
   text-align: center;
-  font-weight: bold;
   font-size: 20px;
   color: #885252;
   margin: 0;
   margin-top: 30px;
   @media ${device.mobile}{
-    font-size: 5vw;
+    font-size: 13px;
+  }
+  @media (max-width: 300px){
+    font-size: 10px;
   }
 `;
