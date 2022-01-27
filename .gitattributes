@@ -1,4 +1,2 @@
 yarn-*.js linguist-vendored
-
 jest.config.js linguist-vendored
-yarn-*.js linguist-vendored
