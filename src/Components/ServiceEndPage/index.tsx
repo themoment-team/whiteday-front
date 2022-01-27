@@ -5,7 +5,7 @@ import * as S from "./style"
 const ServiceEndPage: React.FC = () => {
   return (
     <S.ServiceEndPage>
-      <Background brownBoxVisible={false} maxHeight={1000}/>
+      <Background brownBoxVisible={false} />
       <S.ContentBox>
         <S.Content>
           <S.Logo src="/thank.png" />
