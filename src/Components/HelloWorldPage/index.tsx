@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-import Background from "../Background";
 // import axios from "axios";
 
 // const joinData: Array<String> = [];
@@ -103,11 +102,9 @@ const HelloWorldPage: React.FC = () => {
   const [signinShadow, setSigninShadow] = useState(false);
   return (
     <S.MainBox>
-      <Background brownBoxVisible={false} />
       <S.Title active={login}>
         캔디머신<S.Pink>에</S.Pink> 사탕<S.Pink>을 담아봐!</S.Pink>
       </S.Title>
-
       <S.LoginBox active={login}>
         <S.ChooseSection>
           <S.Choose
