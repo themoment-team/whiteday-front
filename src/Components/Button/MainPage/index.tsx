@@ -8,9 +8,13 @@ interface contentProps{
 
 const MainPageButton: React.FC<contentProps> = ({desc}) => {
   return (
-    <Link to="/helloworld">
-      <S.Button>{desc}</S.Button>
-    </Link>
+    <S.Button>
+      <Link to="/helloworld">
+        <S.Desc>
+          {desc}
+        </S.Desc>
+      </Link>
+    </S.Button>
   );
 }
 
