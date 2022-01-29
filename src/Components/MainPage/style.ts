@@ -7,12 +7,14 @@ export const MainPage = styled.div`
   width: 600px;
   height: 100vh;
   margin: 0 auto;
+  background: linear-gradient(#ffecdb 65%, #885252 35%);
+  box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
   /* display: flex;
   align-items: center; */
   @media ${device.mobile} {
     width: 100vw;
   }
-  @media ${maxHeight}{
+  @media ${maxHeight} {
     overflow: scroll;
     height: 900px;
   }
