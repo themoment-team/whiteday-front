@@ -7,6 +7,8 @@ export const NotFoundPage = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
+  background-color: #ffecdb;
+  box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
   @media ${device.mobile} {
     width: 100vw;
   }
@@ -17,7 +19,6 @@ export const ContentBox = styled.div`
   border-bottom: 5px dashed #885252;
   width: 100%;
   height: 92%;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

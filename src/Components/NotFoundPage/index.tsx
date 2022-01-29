@@ -1,11 +1,9 @@
 import React from "react";
 import * as S from "./style"
-import Background from "../Background";
 
 const NotFoundPage: React.FC = () => {
   return (
     <S.NotFoundPage>
-      <Background brownBoxVisible={false} maxHeight={0} />
       <S.ContentBox>
         <S.Content>
           <S.NotFoundImg src="NotFound.png" />
