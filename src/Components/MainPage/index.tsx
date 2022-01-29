@@ -1,5 +1,4 @@
 import React from "react";
-import Background from "../Background";
 import * as S from "./style"
 
 const MainPage: React.FC = () => {
@@ -7,7 +6,6 @@ const MainPage: React.FC = () => {
   const candyAmount: number = 999;
   return (
     <S.MainPage>
-      <Background brownBoxVisible={true} maxHeight={900}/>
       <S.Content>
         <S.Explanation>
           <S.UserExplanation>
