@@ -101,43 +101,42 @@ const HelloWorldPage: React.FC = () => {
   const [signupShadow, setSignupShadow] = useState(true);
   const [signinShadow, setSigninShadow] = useState(false);
   return (
-    <S.MainBox>
-      <S.Title active={login}>
-        캔디머신<S.Pink>에</S.Pink> 사탕<S.Pink>을 담아봐!</S.Pink>
-      </S.Title>
-      <S.LoginBox active={login}>
-        <S.ChooseSection>
-          <S.Choose
-            pinkShadow={signupShadow}
-            onClick={() => {
-              setLogin(false);
-              setSignupShadow(true);
-              setSigninShadow(false);
-            }}
-          >
-            회원가입
-          </S.Choose>
-          <S.Choose
-            pinkShadow={signinShadow}
-            onClick={() => {
-              setLogin(true);
-              setSigninShadow(true);
-              setSignupShadow(false);
-            }}
-          >
-            로그인
-          </S.Choose>
-        </S.ChooseSection>
-        {!login ? <SignUp /> : <SignIn />}
-        <I.MiniCandy />
-      </S.LoginBox>
-
-      {!login ? (
-        <S.Button onClick={TryJoin}>캔디머신 생성하기</S.Button>
-      ) : (
-        <S.Button onClick={TryLogin}>사탕 채우러 가기</S.Button>
-      )}
-    </S.MainBox>
+    <S.HelloWorldPage>
+        <S.Title active={login}>
+          캔디머신<S.Pink>에</S.Pink> 사탕<S.Pink>을 담아봐!</S.Pink>
+        </S.Title>
+        <S.LoginBox active={login}>
+          <S.ChooseSection>
+            <S.Choose
+              pinkShadow={signupShadow}
+              onClick={() => {
+                setLogin(false);
+                setSignupShadow(true);
+                setSigninShadow(false);
+              }}
+            >
+              회원가입
+            </S.Choose>
+            <S.Choose
+              pinkShadow={signinShadow}
+              onClick={() => {
+                setLogin(true);
+                setSigninShadow(true);
+                setSignupShadow(false);
+              }}
+            >
+              로그인
+            </S.Choose>
+          </S.ChooseSection>
+          {!login ? <SignUp /> : <SignIn />}
+          <I.MiniCandy />
+        </S.LoginBox>
+        {!login ? (
+          <S.Button onClick={TryJoin}>캔디머신 생성하기</S.Button>
+        ) : (
+          <S.Button onClick={TryLogin}>사탕 채우러 가기</S.Button>
+        )}
+    </S.HelloWorldPage>
   );
 };
 

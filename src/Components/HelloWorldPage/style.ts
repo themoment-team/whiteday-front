@@ -9,13 +9,16 @@ interface Shadow {
   pinkShadow: boolean;
 }
 
-export const MainBox = styled.div`
+export const HelloWorldPage = styled.div`
+  box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
   width: 600px;
-  height: 100%;
-  margin: 0 auto;
+  background-color: #ffecdb;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  height: 100%;
+
   * {
     overflow-x: hidden;
   }
@@ -25,11 +28,11 @@ export const MainBox = styled.div`
 `;
 
 export const Title = styled.h1<Login>`
-  position: relative;
   font-size: 25px;
   margin-top: ${({ active }) => (active ? "170" : "92")}px;
   margin-bottom: 60px;
   color: #885252;
+  text-align: center;
 `;
 
 export const Pink = styled.span`
@@ -125,7 +128,6 @@ export const Button = styled.div`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
   line-height: 74px;
-
   @media (max-height: 920px) {
     margin-bottom: 40px;
   }
