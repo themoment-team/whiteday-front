@@ -1,11 +1,9 @@
 import React from "react";
-import Background from "../Background";
 import * as S from "./style"
 
 const ServiceEndPage: React.FC = () => {
   return (
     <S.ServiceEndPage>
-      <Background brownBoxVisible={false} />
       <S.ContentBox>
         <S.Content>
           <S.Logo src="/thank.png" />
