@@ -38,7 +38,7 @@ const CandyDesign: React.FC<PropsType> = ({
       <S.ColorBox>
         {pageNum === 0 &&
           ColorList.map((color, index) => (
-            <S.CandyColor
+            <S.Candy
               onClick={() => changeCandyData({ ...candyData, color })}
               key={index}
               style={{ background: `#${color}` }}
@@ -47,7 +47,7 @@ const CandyDesign: React.FC<PropsType> = ({
 
         {pageNum === 1 &&
           ShapeList.map((shape, index) => (
-            <S.CandyShape
+            <S.Candy
               key={index}
               onClick={() => changeCandyData({ ...candyData, shape })}
               style={{

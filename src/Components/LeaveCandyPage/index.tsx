@@ -36,21 +36,23 @@ function LeaveCandyPage() {
 
   return (
     <S.Main isBottom={pageNum < 2}>
-      {pageNum < 2 ? (
-        <CandyDesign
-          candyData={candyData}
-          pageNum={pageNum}
-          changeCandyData={(data) => setCandyData(data)}
-        />
-      ) : (
-        <>
-          <S.Title>한 마디를 남겨주세요</S.Title>
-          <LeaveMessage
-            changeCandyData={(data) => setCandyData(data)}
+      <S.Combine>
+        {pageNum < 2 ? (
+          <CandyDesign
             candyData={candyData}
+            pageNum={pageNum}
+            changeCandyData={(data) => setCandyData(data)}
           />
-        </>
-      )}
+        ) : (
+          <>
+            <S.Title>한 마디를 남겨주세요</S.Title>
+            <LeaveMessage
+              changeCandyData={(data) => setCandyData(data)}
+              candyData={candyData}
+            />
+          </>
+        )}
+      </S.Combine>
       <S.NextButton shadowBlack={pageNum < 2} onClick={onClick}>
         {pageNum < 2 ? "다음으로" : "사탕 보내기"}
       </S.NextButton>

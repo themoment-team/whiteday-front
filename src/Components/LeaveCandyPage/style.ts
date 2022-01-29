@@ -17,19 +17,10 @@ export const Main = styled.div`
   }
 `;
 
-export const Position = styled.div`
-  width: 600px;
-  height: 100vh;
-  @media ${device.mobile} {
-    width: 100vw;
-  }
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+export const Combine = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
   align-items: center;
 `;
 
@@ -37,7 +28,7 @@ export const Title = styled.h1`
   color: #fd5793;
   background: none;
   text-shadow: 3px 3px 0 #fff;
-  margin: 0;
+  margin: 30px 0;
 
   span {
     @media (max-width: 350px) {
@@ -47,18 +38,24 @@ export const Title = styled.h1`
 `;
 
 export const ColorBox = styled.div`
+  box-sizing: border-box;
   background-color: #fff;
   width: 80%;
-  height: 33%;
+  padding: 70px;
   border-radius: 20px;
   border: 4px dashed #885252;
   display: grid;
+  grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
   align-items: center;
+
+  @media ${device.mobile} {
+    padding: 20px 5px;
+  }
 `;
 
-export const CandyColor = styled.div`
+export const Candy = styled.div`
   margin: 0 auto;
   border-radius: 100%;
   cursor: pointer;
@@ -66,25 +63,8 @@ export const CandyColor = styled.div`
   width: 80px;
   height: 80px;
   @media (max-width: 370px) {
-    width: 65px;
-    height: 65px;
-  }
-
-  &:active {
-    transform: scale(1.3);
-  }
-`;
-
-export const CandyShape = styled.div`
-  margin: 0 auto;
-  border-radius: 100%;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 80px;
-  height: 80px;
-  @media (max-width: 370px) {
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
   }
 
   &:active {
