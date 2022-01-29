@@ -3,9 +3,15 @@ import device from "../../Shared/Config";
 
 export const Main = styled.div`
   width: 600px;
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
-  overflow-y: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background: #ffecdb;
+  ${(props: { isBottom: boolean }) =>
+    props.isBottom && "background: linear-gradient(#ffecdb 70%, #885252 30%);"}
   @media ${device.mobile} {
     width: 100vw;
   }
@@ -31,6 +37,7 @@ export const Title = styled.h1`
   color: #fd5793;
   background: none;
   text-shadow: 3px 3px 0 #fff;
+  margin: 0;
 
   span {
     @media (max-width: 350px) {
@@ -155,7 +162,6 @@ export const NextButton = styled.button`
   font-weight: 700;
   color: #fd5793;
   font-family: inherit;
-  margin-top: 100px;
   cursor: pointer;
   outline: none;
 
