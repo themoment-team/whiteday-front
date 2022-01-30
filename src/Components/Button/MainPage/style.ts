@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "../../../Shared/Config";
 
 export const Button = styled.div`
   width: 90%;
@@ -10,6 +11,9 @@ export const Button = styled.div`
   &:hover {
     cursor: pointer;
   }
+  @media ${device.mobile}{
+    height: 6vh;
+  }
 `;
 
 export const Desc = styled.p`
@@ -18,4 +22,8 @@ export const Desc = styled.p`
   text-align: center;
   line-height: 70px;
   margin: 0;
+  @media ${device.mobile} {
+    line-height: 6vh;
+    font-size: 4vw;
+  }
 `;
