@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import device from "../../Shared/Config";
 
-const maxHeight = "(max-height: 900px) and (min-width: 600px)";
+const desktop = "(min-width: 600px)"
 
 export const MainPage = styled.div`
   width: 600px;
@@ -9,29 +9,26 @@ export const MainPage = styled.div`
   margin: 0 auto;
   background: linear-gradient(#ffecdb 65%, #885252 35%);
   box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
-  /* display: flex;
-  align-items: center; */
+  display: flex;
+  align-items: center;
   @media ${device.mobile} {
     width: 100vw;
+    background: linear-gradient(#ffecdb 60%, #885252 40%);
   }
-  @media ${maxHeight} {
-    overflow: scroll;
-    height: 900px;
+  @media ${desktop} {
+    min-height: 950px;
   }
 `;
 
 export const Content = styled.div`
   width: 100%;
-  position: relative;
-  height: 750px;
-  top: 7%;
 `
 
 export const Explanation = styled.div`
-  position: relative;
   text-align: center;
   font-weight: bold;
   color: #885252;
+  margin-bottom: 4vh;
 `;
 
 export const UserExplanation = styled.p`
@@ -56,6 +53,13 @@ export const Pink = styled.span`
 
 export const CandyMachine = styled.img`
   width: 100%;
-  top: 5%;
-  position: relative;
+`;
+
+export const CandyList = styled.div`
+  margin: 0 auto;
+  margin-top: 6vh;
+  margin-bottom: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
