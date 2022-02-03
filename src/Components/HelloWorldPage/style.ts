@@ -24,7 +24,7 @@ export const HelloWorldPage = styled.div`
   @media ${device.mobile} {
     width: 100vw;
   }
-  @media (max-height: 900px) {
+  @media (max-height: 920px) {
     height: 100%;
   }
 `;
@@ -131,7 +131,7 @@ export const Button = styled.div`
   text-align: center;
   line-height: 74px;
   @media (max-height: 920px) {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
   }
 
   @media ${device.mobile} {
