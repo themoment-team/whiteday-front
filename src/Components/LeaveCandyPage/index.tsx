@@ -23,8 +23,7 @@ function LeaveCandyPage() {
 
   const onClick = () => {
     if (pageNum >= 2) {
-      // candy 생성
-      console.log({ ...candyData });
+      // 서버에 candy 생성 요청
       navigate("/");
     } else if (
       (candyData.color && pageNum === 0) ||
