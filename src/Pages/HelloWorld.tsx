@@ -4,7 +4,7 @@ import { HelloWorldPage } from "../Components";
 const HelloWorld: React.FC = () => {
   return (
     <>
-      <HelloWorldPage></HelloWorldPage>
+      <HelloWorldPage />
     </>
   );
 };
