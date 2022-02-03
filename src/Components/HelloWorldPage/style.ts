@@ -17,13 +17,15 @@ export const HelloWorldPage = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  height: 100%;
-
+  height: 100vh;
   * {
     overflow-x: hidden;
   }
   @media ${device.mobile} {
     width: 100vw;
+  }
+  @media (max-height: 900px) {
+    height: 100%;
   }
 `;
 
