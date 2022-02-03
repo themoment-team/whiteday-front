@@ -48,18 +48,24 @@ export const CountExplanation = styled.p`
 `;
 
 export const Pink = styled.span`
-  color: #ff94bb;
+  color: #ff639b;
+`;
+
+export const Title = styled.img`
+  width: 33%;
+  margin: 0 auto;
+`
+
+export const TitleExplanation = styled.p`
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  color: #ff639b;
+  @media ${device.mobile} {
+    font-size: 3vw;
+  }
 `;
 
 export const CandyMachine = styled.img`
   width: 100%;
-`;
-
-export const CandyList = styled.div`
-  margin: 0 auto;
-  margin-top: 6vh;
-  margin-bottom: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
