@@ -6,7 +6,7 @@ import CandyList from "../CandyList";
 const MainPage: React.FC = () => {
   const user: string = "김형록";
   const candyAmount: number = 999;
-  const logged: boolean = false;
+  const logged: boolean = true;
 
   return (
     <S.MainPage>
