@@ -5,8 +5,7 @@ export const Button = styled.div`
   width: 90%;
   height: 70px;
   background-color: #fd5793;
-  margin: 0 auto;
-  margin-top: 5vh;
+  margin: 5vh auto 0;
   border-radius: 30px;
   box-shadow: 0 5px 0px #FFFFFF;
   &:hover {

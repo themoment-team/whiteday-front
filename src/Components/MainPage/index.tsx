@@ -23,7 +23,7 @@ const MainPage: React.FC = () => {
           </S.Explanation>
         ) : (
           <S.Explanation>
-            <S.Title src="/Images/Title.png" />
+            <S.Title src="/Images/Title.png" alt="title"/>
             <S.TitleExplanation>캔디머신에 사탕을 담아봐</S.TitleExplanation>
           </S.Explanation>
         )}
