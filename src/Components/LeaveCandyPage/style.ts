@@ -6,9 +6,9 @@ export const Main = styled.div`
   height: 100vh;
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: #ffecdb;
   ${(props: { isBottom: boolean }) =>
     props.isBottom && "background: linear-gradient(#ffecdb 70%, #885252 30%);"}
@@ -21,7 +21,12 @@ export const Combine = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 80%;
   align-items: center;
+
+  @media ${device.mobile} {
+    height: auto;
+  }
 `;
 
 export const Title = styled.h1`
@@ -144,10 +149,7 @@ export const NextButton = styled.button`
   font-family: inherit;
   cursor: pointer;
   outline: none;
-
-  @media ${device.mobile} {
-    margin-top: 50px;
-  }
+  margin-top: 20px;
   ${({ shadowBlack }: { shadowBlack: boolean }) =>
     shadowBlack
       ? "box-shadow: 0px 3px 0 #fd5793;"
