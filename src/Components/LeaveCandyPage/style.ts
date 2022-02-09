@@ -21,7 +21,6 @@ export const Combine = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80%;
   align-items: center;
 
   @media ${device.mobile} {
@@ -33,7 +32,7 @@ export const Title = styled.h1`
   color: #fd5793;
   background: none;
   text-shadow: 3px 3px 0 #fff;
-  margin: 30px 0;
+  margin: 0 0 30px;
 
   span {
     @media (max-width: 350px) {
@@ -78,8 +77,10 @@ export const Candy = styled.div`
 `;
 
 export const Circle = styled.div`
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
+  width: 60vh;
+  height: 60vh;
   background: #fff;
   border-radius: 100%;
   border: 3px solid #fd5793;
@@ -139,7 +140,7 @@ export const MessageInput = styled.textarea`
 
 export const NextButton = styled.button`
   width: 80%;
-  height: 50px;
+  min-height: 50px;
   border: none;
   border-radius: 30px;
   background: #fff;
