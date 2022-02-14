@@ -18,14 +18,17 @@ export const HelloWorldPage = styled.div`
   align-items: center;
   margin: 0 auto;
   height: 100vh;
+
   * {
     overflow-x: hidden;
   }
-  @media ${device.mobile} {
-    width: 100vw;
-  }
+
   @media (max-height: 920px) {
     height: 100%;
+  }
+
+  @media ${device.mobile} {
+    width: 100vw;
   }
 `;
 
@@ -35,6 +38,14 @@ export const Title = styled.h1<Login>`
   margin-bottom: 60px;
   color: #885252;
   text-align: center;
+
+  @media ${device.mobile} {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `;
 
 export const Pink = styled.span`
@@ -52,17 +63,24 @@ export const LoginBox = styled.div<Login>`
   border-radius: 20px;
   border-bottom: 5px solid #885252;
   margin-bottom: 28px;
+  overflow: hidden;
   svg {
     position: absolute;
     left: 81%;
     top: ${({ active }) => (active ? "82" : "88")}%;
   }
+
+  * {
+    overflow: hidden;
+  }
+
   @media ${device.mobile} {
     width: 450px;
   }
 
   @media (max-width: 450px) {
     width: 350px;
+    height: ${({ active }) => (active ? "330" : "480")}px;
   }
 `;
 
@@ -71,6 +89,7 @@ export const ChooseSection = styled.div`
   margin: 50px 0 30px;
   @media ${device.mobile} {
     width: 270px;
+    margin: 40px 0 20px;
   }
 `;
 
@@ -83,12 +102,18 @@ export const Choose = styled.span<Shadow>`
   color: white;
   text-shadow: ${({ pinkShadow }) =>
     pinkShadow ? "2px 2px 2px #fd5793" : null};
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
 `;
 
 export const Name = styled.div`
   color: #fd5793;
   font-size: 15px;
   margin-left: 12px;
+  @media (max-width: 400px) {
+    font-size: 12px;
+  }
 `;
 
 export const Input = styled.input`
@@ -115,6 +140,11 @@ export const Input = styled.input`
 
   @media (max-width: 450px) {
     width: 250px;
+    height: 35px;
+    padding-left: 30px;
+    &::placeholder {
+      font-size: 10px;
+    }
   }
 `;
 
@@ -140,5 +170,9 @@ export const Button = styled.div`
 
   @media (max-width: 450px) {
     width: 350px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 16px;
   }
 `;
