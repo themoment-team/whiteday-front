@@ -43,7 +43,7 @@ export const Title = styled.h1<Login>`
     margin-bottom: 30px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     font-size: 20px;
   }
 `;
@@ -102,7 +102,7 @@ export const Choose = styled.span<Shadow>`
   color: white;
   text-shadow: ${({ pinkShadow }) =>
     pinkShadow ? "2px 2px 2px #fd5793" : null};
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     font-size: 16px;
   }
 `;
@@ -111,7 +111,7 @@ export const Name = styled.div`
   color: #fd5793;
   font-size: 15px;
   margin-left: 12px;
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     font-size: 12px;
   }
 `;
@@ -170,9 +170,6 @@ export const Button = styled.div`
 
   @media (max-width: 450px) {
     width: 350px;
-  }
-
-  @media (max-width: 400px) {
     font-size: 16px;
   }
 `;
