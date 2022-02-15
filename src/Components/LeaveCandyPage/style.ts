@@ -53,7 +53,7 @@ export const ColorBox = styled.div`
   align-items: center;
 
   @media ${device.mobile} {
-    padding: 20px 5px;
+    padding: 20px;
   }
 `;
 
@@ -66,9 +66,9 @@ export const Candy = styled.div`
 
   ${(props: { focus: boolean }) => props.focus && "border: 2px solid #FD5793;"}
 
-  @media (max-width: 370px) {
-    width: 50px;
-    height: 50px;
+  @media (max-width: 410px) {
+    width: 60px;
+    height: 60px;
   }
 `;
 
