@@ -34,7 +34,7 @@ function LeaveCandyPage() {
   };
 
   return (
-    <S.Main isBottom={pageNum < 2}>
+    <S.Main>
       <S.Combine>
         {pageNum < 2 ? (
           <CandyDesign

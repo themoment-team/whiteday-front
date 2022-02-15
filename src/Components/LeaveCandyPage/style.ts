@@ -10,8 +10,6 @@ export const Main = styled.div`
   align-items: center;
   justify-content: center;
   background: #ffecdb;
-  ${(props: { isBottom: boolean }) =>
-    props.isBottom && "background: linear-gradient(#ffecdb 70%, #885252 30%);"}
   @media ${device.mobile} {
     width: 100vw;
   }
