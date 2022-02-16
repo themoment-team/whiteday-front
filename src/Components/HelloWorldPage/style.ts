@@ -124,7 +124,7 @@ export const Input = styled.input`
   border: 3px dashed rgba(134, 79, 79, 0.98);
   border-radius: 30px;
   outline: 0;
-  padding-left: 40px;
+  padding: 0px 40px;
   font-size: 12px;
   margin-bottom: 40px;
   font-family: "yg-jalnan";
@@ -141,7 +141,7 @@ export const Input = styled.input`
   @media (max-width: 450px) {
     width: 250px;
     height: 35px;
-    padding-left: 30px;
+    padding: 0px 30px;
     &::placeholder {
       font-size: 10px;
     }
