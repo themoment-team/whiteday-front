@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-// import axios from "axios";
-
-// const joinData: Array<String> = [];
-// const loginData: Array<String> = [];
+import axios from "axios";
 
 const SignUp: React.FC = () => {
   const value = [
-    { name: "아이디", placeholder: "영문, 숫자를 포함한 5자 이상" },
+    {
+      name: "아이디",
+      placeholder: "영문, 숫자를 포함한 5자 이상",
+      minLength: 5,
+    },
     {
       name: "비밀번호",
       placeholder: "영문, 숫자를 포함한 4~20자 이내",
@@ -40,7 +41,7 @@ const SignUp: React.FC = () => {
             type={value.type}
             maxLength={value.maxLength}
             minLength={value.minLength}
-            // onChange={(e) => (joinData[index] = e.target.value)}
+            onChange={(e) => (joinData[index] = e.target.value)}
           ></S.Input>
         </div>
       ))}
@@ -61,7 +62,7 @@ const SignIn: React.FC = () => {
           <S.Input
             placeholder={value.placeholder}
             type={value.type}
-            // onChange={(e) => (loginData[index] = e.target.value)}
+            onChange={(e) => (loginData[index] = e.target.value)}
           ></S.Input>
         </div>
       ))}
@@ -69,27 +70,33 @@ const SignIn: React.FC = () => {
   );
 };
 
+const joinData: Array<String> = [];
 const TryJoin = async () => {
-  // try {
-  //   const res = await axios.post("/join", {
-  //     id: joinData[0],
-  //     pw: joinData[1],
-  //     nickName: joinData[3],
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  // }
+  console.log(joinData);
+  try {
+    const res = await axios.post("/join", {
+      id: joinData[0],
+      password: joinData[1],
+      name: joinData[3],
+    });
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
+const loginData: Array<String> = [];
 const TryLogin = async () => {
-  // try {
-  //   const res = await axios.post("/login", {
-  //     id: loginData[0],
-  //     pw: loginData[1],
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  // }
+  console.log(loginData);
+  try {
+    const res = await axios.post("/login", {
+      id: loginData[0],
+      password: loginData[1],
+    });
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const HelloWorldPage: React.FC = () => {
