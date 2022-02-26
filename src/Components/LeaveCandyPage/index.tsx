@@ -2,6 +2,7 @@ import { useState } from "react";
 import CandyDesign from "./CandyDesign";
 import LeaveMessage from "./LeaveMessage";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import * as S from "./style";
 
 export interface CandyI {
@@ -21,10 +22,17 @@ function LeaveCandyPage() {
     message: "",
   });
 
-  const onClick = () => {
+  const onClick = async () => {
     if (pageNum >= 2) {
-      // 서버에 candy 생성 요청
-      navigate("/");
+      try {
+        await axios.post(
+          `http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com/v1/candy/${"memberUri"}`,
+          candyData,
+        );
+        navigate("/");
+      } catch (e) {
+        console.error(e);
+      }
     } else if (
       (candyData.color && pageNum === 0) ||
       (candyData.shape && pageNum === 1)

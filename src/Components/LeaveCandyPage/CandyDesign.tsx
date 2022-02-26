@@ -39,7 +39,12 @@ const CandyDesign: React.FC<PropsType> = ({
         {pageNum === 0 &&
           ColorList.map((color, index) => (
             <S.Candy
-              onClick={() => changeCandyData({ ...candyData, color })}
+              onClick={() =>
+                changeCandyData({
+                  ...candyData,
+                  color: candyData.color === color ? "" : color,
+                })
+              }
               key={index}
               style={{ background: `#${color}` }}
               focus={color === candyData.color}

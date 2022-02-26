@@ -63,6 +63,7 @@ export const Candy = styled.div`
   cursor: pointer;
   width: 80px;
   height: 80px;
+  box-sizing: border-box;
 
   ${(props: { focus: boolean }) => props.focus && "border: 2px solid #FD5793;"}
 
