@@ -1,17 +1,9 @@
 import styled from "styled-components";
 import device from "../../Shared/Config";
 
-interface Login {
-  active: boolean;
-}
-
-interface Shadow {
-  pinkShadow: boolean;
-}
-
 export const HelloWorldPage = styled.div`
   box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
-  width: 600px;
+  max-width: 600px;
   background-color: #ffecdb;
   display: flex;
   flex-direction: column;
@@ -19,32 +11,20 @@ export const HelloWorldPage = styled.div`
   margin: 0 auto;
   height: 100vh;
 
-  * {
-    overflow-x: hidden;
-  }
-
   @media (max-height: 920px) {
     height: 100%;
   }
-
-  @media ${device.mobile} {
-    width: 100vw;
-  }
 `;
 
-export const Title = styled.h1<Login>`
+export const Title = styled.h1`
   font-size: 25px;
-  margin-top: ${({ active }) => (active ? "170" : "92")}px;
-  margin-bottom: 60px;
+  margin: 170px 0 60px;
   color: #885252;
   text-align: center;
 
-  @media ${device.mobile} {
-    margin-bottom: 30px;
-  }
-
   @media (max-width: 450px) {
     font-size: 20px;
+    margin-top: 100px;
   }
 `;
 
@@ -52,26 +32,26 @@ export const Pink = styled.span`
   color: #ff7bab;
 `;
 
-export const LoginBox = styled.div<Login>`
+export const LoginBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 550px;
-  height: ${({ active }) => (active ? "400" : "600")}px;
+  height: 400px;
   background-color: #ffd8e6;
   border-radius: 20px;
   border-bottom: 5px solid #885252;
-  margin-bottom: 28px;
   overflow: hidden;
-  svg {
+
+  .MiniCandy {
     position: absolute;
-    left: 81%;
-    top: ${({ active }) => (active ? "82" : "88")}%;
+    top: 80%;
+    left: 80%;
   }
 
-  * {
-    overflow: hidden;
+  @media (max-height: 920px) {
+    margin-bottom: 220px;
   }
 
   @media ${device.mobile} {
@@ -80,96 +60,54 @@ export const LoginBox = styled.div<Login>`
 
   @media (max-width: 450px) {
     width: 350px;
-    height: ${({ active }) => (active ? "330" : "480")}px;
+    height: 330px;
   }
 `;
 
-export const ChooseSection = styled.div`
-  width: 350px;
-  margin: 50px 0 30px;
-  @media ${device.mobile} {
-    width: 270px;
-    margin: 40px 0 20px;
-  }
-`;
-
-export const Choose = styled.span<Shadow>`
-  display: inline-block;
-  width: 50%;
+export const SubTitle = styled.div`
+  margin: 45px 0 60px;
   text-align: center;
-  font-size: 20px;
-  cursor: pointer;
-  color: white;
-  text-shadow: ${({ pinkShadow }) =>
-    pinkShadow ? "2px 2px 2px #fd5793" : null};
+  font-size: 25px;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #fd5793;
+
   @media (max-width: 450px) {
-    font-size: 16px;
+    font-size: 20px;
+    margin-bottom: 40px;
   }
 `;
 
-export const Name = styled.div`
-  color: #fd5793;
-  font-size: 15px;
-  margin-left: 12px;
-  @media (max-width: 450px) {
-    font-size: 12px;
-  }
-`;
-
-export const Input = styled.input`
+export const LoginButton = styled.div`
   width: 390px;
-  height: 46px;
-  box-sizing: border-box;
+  height: 50px;
   background: #ffffff;
   border: 3px dashed rgba(134, 79, 79, 0.98);
   border-radius: 30px;
-  outline: 0;
-  padding: 0px 40px;
-  font-size: 12px;
   margin-bottom: 40px;
-  font-family: "yg-jalnan";
-
-  &::placeholder {
-    font-family: "yg-jalnan";
-    color: #b0b0b0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
   @media ${device.mobile} {
-    width: 300px;
+    width: 350px;
   }
 
   @media (max-width: 450px) {
-    width: 250px;
-    height: 35px;
-    padding: 0px 30px;
-    &::placeholder {
-      font-size: 10px;
+    width: 280px;
+    height: 38px;
+
+    svg {
+      width: 30px;
     }
   }
 `;
 
-export const Button = styled.div`
-  width: 549px;
-  height: 74px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  cursor: pointer;
-  border-bottom: 5px solid #885252;
-  font-size: 20px;
+export const Name = styled.span`
   color: #fd5793;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  text-align: center;
-  line-height: 74px;
-  @media (max-height: 920px) {
-    margin-bottom: 80px;
-  }
-
-  @media ${device.mobile} {
-    width: 450px;
-  }
-
+  font-size: 13px;
+  margin-left: 18px;
   @media (max-width: 450px) {
-    width: 350px;
-    font-size: 16px;
+    font-size: 12px;
   }
 `;
