@@ -25,6 +25,14 @@ function LeaveCandyPage() {
   const onClick = async () => {
     if (pageNum >= 2) {
       try {
+        if (
+          !candyData.color ||
+          !candyData.shape ||
+          !candyData.message ||
+          !candyData.title
+        )
+          return;
+
         await axios.post(
           `http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com/v1/candy/${"memberUri"}`,
           candyData,
