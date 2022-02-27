@@ -1,1 +1,1 @@
-export {}
+import { isShowMessage } from "./AtomContainer";
