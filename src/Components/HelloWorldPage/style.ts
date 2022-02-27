@@ -107,7 +107,4 @@ export const Name = styled.span`
   color: #fd5793;
   font-size: 13px;
   margin-left: 18px;
-  @media (max-width: 450px) {
-    font-size: 12px;
-  }
 `;
