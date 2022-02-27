@@ -1,19 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-import axios from "axios";
-
-const TryJoin = async () => {
-  try {
-  } catch (err) {}
-};
-
-const TryLogin = async () => {
-  try {
-  } catch (err) {
-    console.log(err);
-  }
-};
 
 const HelloWorldPage: React.FC = () => {
   return (
@@ -23,14 +10,21 @@ const HelloWorldPage: React.FC = () => {
       </S.Title>
       <S.LoginBox>
         <S.SubTitle>로그인</S.SubTitle>
-        <S.LoginButton>
-          <I.GithubLogo />
-          <S.Name>GitHub로 로그인 하기</S.Name>
-        </S.LoginButton>
-        <S.LoginButton>
-          <I.GoogleLogo />
-          <S.Name>Google로 로그인 하기</S.Name>
-        </S.LoginButton>
+
+        <a href=" http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/github">
+          <S.LoginButton>
+            <I.GithubLogo />
+            <S.Name>GitHub로 로그인 하기</S.Name>
+          </S.LoginButton>
+        </a>
+
+        <a href=" http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google">
+          <S.LoginButton>
+            <I.GoogleLogo />
+            <S.Name>Google로 로그인 하기</S.Name>
+          </S.LoginButton>
+        </a>
+
         <div className="MiniCandy">
           <I.MiniCandy />
         </div>
