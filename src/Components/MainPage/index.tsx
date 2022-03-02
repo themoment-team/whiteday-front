@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style"
 import MainPageButton from "../Button/MainPage";
 import CandyList from "../CandyList";
 import CandyMachine from "../CandyMachine";
+import axios from "axios"
 
 const MainPage: React.FC = () => {
-  const user: string = "김형록";
-  const candyAmount: number = 999;
+  const [username, setUsername] = useState<string>("")
+  const [candyAmount, setCandyAmount] = useState<number>(0)
   const logged: boolean = true;
+
+  useEffect(() => {
+    axios.get("/v1/login/info")
+      .then(response => {
+        setUsername(response.data.data.member.name);
+        setCandyAmount(response.data.data.candies.length);
+      })
+  }, [])
 
   return (
     <S.MainPage>
@@ -15,7 +24,7 @@ const MainPage: React.FC = () => {
         {logged ? (
           <S.Explanation>
             <S.UserExplanation>
-              {user}님<S.Pink>의</S.Pink> 캔디머신
+              {username}님<S.Pink>의</S.Pink> 캔디머신
             </S.UserExplanation>
             <S.CountExplanation>
               {candyAmount}개<S.Pink>의</S.Pink> 사탕
