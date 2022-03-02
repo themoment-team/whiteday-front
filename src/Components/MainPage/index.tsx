@@ -1,9 +1,13 @@
-import React from "react";
-import * as S from "./style"
+import React, { useState } from "react";
+import Message from "../Message";
+import * as S from "./style";
+import { isShowMessage } from "../../Atoms";
+import { useRecoilState } from "recoil";
 
 const MainPage: React.FC = () => {
   const user: string = "김형록";
   const candyAmount: number = 999;
+  const [show, setShow] = useRecoilState(isShowMessage);
   return (
     <S.MainPage>
       <S.Explanation>
@@ -15,6 +19,7 @@ const MainPage: React.FC = () => {
         </S.CountExplanation>
       </S.Explanation>
       <S.CandyMachine src="/Images/CandyMachine.png" alt="candymachine" />
+      {show ? <Message /> : null}
     </S.MainPage>
   );
 };
