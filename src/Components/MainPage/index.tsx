@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./style"
 import MainPageButton from "../Button/MainPage";
 import CandyList from "../CandyList";
+import CandyMachine from "../CandyMachine";
 
 const MainPage: React.FC = () => {
   const user: string = "김형록";
@@ -27,7 +28,7 @@ const MainPage: React.FC = () => {
             <S.TitleExplanation>캔디머신에 사탕을 담아봐</S.TitleExplanation>
           </S.Explanation>
         )}
-        <S.CandyMachine src="/Images/CandyMachine.png" alt="candymachine" />
+        <CandyMachine />
         <CandyList />
         <MainPageButton />
       </S.Content>
