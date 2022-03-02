@@ -1,1 +1,1 @@
-import { isShowMessage } from "./AtomContainer";
+export { isShowMessage } from "./AtomContainer";
