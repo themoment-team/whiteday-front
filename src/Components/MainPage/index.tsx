@@ -18,11 +18,7 @@ const MainPage: React.FC = () => {
           {candyAmount}개<S.Pink>의</S.Pink> 사탕<S.Pink>이 들어있어요</S.Pink>
         </S.CountExplanation>
       </S.Explanation>
-      <S.CandyMachine
-        src="/Images/CandyMachine.png"
-        alt="candymachine"
-        onClick={() => setShow(true)}
-      />
+      <S.CandyMachine src="/Images/CandyMachine.png" alt="candymachine" />
       {show ? <Message /> : null}
     </S.MainPage>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-import { isShowMessage } from "../../Atoms/AtomContainer";
+import { isShowMessage } from "../../Atoms";
 import { useRecoilState } from "recoil";
 
 const Message: React.FC<{}> = () => {
