@@ -4,6 +4,9 @@ import MainPageButton from "../Button/MainPage";
 import CandyList from "../CandyList";
 import CandyMachine from "../CandyMachine";
 import axios from "axios"
+import { isShowMessage } from "../../Atoms";
+import { useRecoilState } from "recoil";
+import Message from "../Message";
 
 const MainPage: React.FC = () => {
   const [username, setUsername] = useState<string>("")
@@ -41,6 +44,7 @@ const MainPage: React.FC = () => {
         <CandyList />
         <MainPageButton />
       </S.Content>
+      {/* {show ? <Message /> : null} */}
     </S.MainPage>
   );
 };

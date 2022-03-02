@@ -11,6 +11,7 @@ export const MainPage = styled.div`
   box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
   display: flex;
   align-items: center;
+  position: relative;
   @media ${device.mobile} {
     width: 100vw;
     background: linear-gradient(#ffecdb 60%, #885252 40%);
