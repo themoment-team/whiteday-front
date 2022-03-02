@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Message from "../Message";
 import * as S from "./style";
-import { isShowMessage } from "../../Atoms/AtomContainer";
+import { isShowMessage } from "../../Atoms";
 import { useRecoilState } from "recoil";
 
 const MainPage: React.FC = () => {
