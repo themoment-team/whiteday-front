@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const MainPageButton: React.FC = () => {
   const logged: boolean = true;
-  const URL: string = "/abcdefg";
+  const [URI, setURI] = useState<string>("")
+
+  useEffect(() => {
+    axios.get("/v1/login/info")
+      .then(response => {
+        setURI(response.data.data.member.uri);
+      })
+  },[])
 
   const copy = () => {
-    navigator.clipboard.writeText(`https://whiteday.the-moment.org${URL}`);
+    console.log(URI)
+    navigator.clipboard.writeText(`https://whiteday.the-moment.org/${URI}`);
   }
 
   return (
