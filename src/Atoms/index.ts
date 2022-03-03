@@ -1,1 +1,1 @@
-export { machineIndexAtom, isShowMessage } from './AtomContainer';
+export { machineIndexAtom, isShowMessage, candyIndexAtom, loggedAtom } from './AtomContainer';
