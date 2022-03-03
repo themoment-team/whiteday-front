@@ -2,7 +2,7 @@ import { useState } from "react";
 import CandyDesign from "./CandyDesign";
 import LeaveMessage from "./LeaveMessage";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../lib/api";
 import * as S from "./style";
 
 export interface CandyI {
@@ -33,10 +33,7 @@ function LeaveCandyPage() {
         )
           return;
 
-        await axios.post(
-          `http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com/v1/candy/${"memberUri"}`,
-          candyData,
-        );
+        await api.post(`/v1/candy/${"memberUri"}`, candyData);
         navigate("/");
       } catch (e) {
         console.error(e);
