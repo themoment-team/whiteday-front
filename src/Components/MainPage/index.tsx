@@ -4,20 +4,26 @@ import MainPageButton from "../Button/MainPage";
 import CandyList from "../CandyList";
 import CandyMachine from "../CandyMachine";
 import axios from "axios"
-import { isShowMessage } from "../../Atoms";
-import { useRecoilState } from "recoil";
+import { isShowMessage, loggedAtom } from "../../Atoms";
+import { useRecoilValue, useRecoilState } from "recoil";
 import Message from "../Message";
 
 const MainPage: React.FC = () => {
   const [username, setUsername] = useState<string>("")
   const [candyAmount, setCandyAmount] = useState<number>(0)
-  const logged: boolean = true;
+  const [logged, setLogged] = useRecoilState(loggedAtom)
+
+  const show = useRecoilValue(isShowMessage)
 
   useEffect(() => {
     axios.get("/v1/login/info")
-      .then(response => {
+      .then((response) => {
         setUsername(response.data.data.member.name);
         setCandyAmount(response.data.data.candies.length);
+        setLogged(true);
+      })
+      .catch(error => {
+        setLogged(false)
       })
   }, [])
 
@@ -44,7 +50,7 @@ const MainPage: React.FC = () => {
         <CandyList />
         <MainPageButton />
       </S.Content>
-      {/* {show ? <Message /> : null} */}
+      {show && <Message />}
     </S.MainPage>
   );
 };
