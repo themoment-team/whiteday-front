@@ -3,10 +3,10 @@ import * as S from "./style"
 import MainPageButton from "../Button/MainPage";
 import CandyList from "../CandyList";
 import CandyMachine from "../CandyMachine";
-import axios from "axios"
 import { isShowMessage, loggedAtom } from "../../Atoms";
 import { useRecoilValue, useRecoilState } from "recoil";
 import Message from "../Message";
+import api from "../../lib/api";
 
 const MainPage: React.FC = () => {
   const [username, setUsername] = useState<string>("")
@@ -16,7 +16,7 @@ const MainPage: React.FC = () => {
   const show = useRecoilValue(isShowMessage)
 
   useEffect(() => {
-    axios.get("/v1/login/info")
+    api.get("/v1/login/info")
       .then((response) => {
         setUsername(response.data.data.member.name);
         setCandyAmount(response.data.data.candies.length);
