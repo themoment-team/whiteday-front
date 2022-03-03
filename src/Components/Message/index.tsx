@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-import { isShowMessage } from "../../Atoms";
-import { useRecoilState } from "recoil";
+import { isShowMessage, machineIndexAtom, candyIndexAtom } from "../../Atoms";
+import { useSetRecoilState, useRecoilValue } from "recoil";
 
 const Message: React.FC<{}> = () => {
-  const [show, setShow] = useRecoilState(isShowMessage);
-  const name: string = "화이트데이";
-  const content: string =
-    "달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요";
+  const setShow = useSetRecoilState(isShowMessage);
+  const [name, setName] = useState<string>("")
+  const [content, setContent] = useState<string>("")
+  const candyIndex = useRecoilValue(candyIndexAtom)
+  const machineIndex = useRecoilValue(machineIndexAtom)
 
+  // const content: string =
+  useEffect(() => {
+    axios.get("/v1/login/info")
+      .then(response => {
+        // setName(response.data.data.candies[machineIndex * 7 + candyIndex].)
+        // setContent
+      })
+  })
+  
   return (
     <S.Background>
       <S.Message>
