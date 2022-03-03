@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useRecoilValue } from "recoil";
+import { loggedAtom } from "../../../Atoms";
 
 const MainPageButton: React.FC = () => {
-  const logged: boolean = true;
+  const logged = useRecoilValue(loggedAtom)
   const [URI, setURI] = useState<string>("")
 
   useEffect(() => {
