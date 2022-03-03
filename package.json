@@ -47,5 +47,6 @@
   },
   "devDependencies": {
     "prettier": "2.5.1"
-  }
+  },
+  "proxy": "http://ec2-15-165-232-175.ap-northeast-2.compute.amazonaws.com"
 }
