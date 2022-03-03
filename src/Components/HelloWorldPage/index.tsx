@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
+import { baseUrl } from "../../Shared/Config";
 
 const HelloWorldPage: React.FC = () => {
   return (
@@ -10,13 +11,13 @@ const HelloWorldPage: React.FC = () => {
       </S.Title>
       <S.LoginBox>
         <S.SubTitle>로그인</S.SubTitle>
-        <a href="http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/github">
+        <a href={`${baseUrl}/oauth2/authorization/github`}>
           <S.LoginButton>
             <I.GithubLogo />
             <S.Name>GitHub로 로그인 하기</S.Name>
           </S.LoginButton>
         </a>
-        <a href="http://ec2-54-180-39-133.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorization/google">
+        <a href={`${baseUrl}/oauth2/authorization/google`}>
           <S.LoginButton>
             <I.GoogleLogo />
             <S.Name>Google로 로그인 하기</S.Name>
