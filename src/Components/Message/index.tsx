@@ -14,9 +14,10 @@ const Message: React.FC<{}> = () => {
 
   // const content: string =
   useEffect(() => {
-    api.get("/v1/login/info").then((response) => {
-      // setName(response.data.data.candies[machineIndex * 7 + candyIndex].)
-      // setContent
+    api.get(`/v1/candy/${machineIndex * 7 + candyIndex}`)
+      .then((response) => {
+        setName(response.data.data.writer)
+        setContent(response.data.data.content)
     });
   });
 
