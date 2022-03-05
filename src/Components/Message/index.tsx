@@ -11,8 +11,7 @@ const Message: React.FC<{}> = () => {
   const [content, setContent] = useState<string>("");
   const candyIndex = useRecoilValue(candyIndexAtom);
   const machineIndex = useRecoilValue(machineIndexAtom);
-
-  // const content: string =
+  
   useEffect(() => {
     api.get(`/v1/candy/${machineIndex * 7 + candyIndex}`)
       .then((response) => {
