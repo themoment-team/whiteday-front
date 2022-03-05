@@ -1,25 +1,28 @@
 import * as S from "./style";
 import React, { useState, useEffect } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { machineIndexAtom, loggedAtom } from "../../Atoms";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { machineIndexAtom, sharedAtom } from "../../Atoms";
 import api from "../../lib/api";
+import { useParams } from "react-router-dom";
 
 interface bundleType {
   select: boolean;
 }
 
 const CandyList: React.FC = () => {
-  const logged = useRecoilValue(loggedAtom);
   const [candyBundle, setCandyBundle] = useState<object[]>([]);
-  const [machineIndex, setMachineIndex] = useRecoilState(machineIndexAtom);
+  const setMachineIndex = useSetRecoilState(machineIndexAtom);
+  const shared = useRecoilValue(sharedAtom);
+  const member_uri = useParams().member_uri;
 
   useEffect(() => {
-    api.get("/v1/login/info").then((response) => {
-      const count = Math.ceil(response.data.data.candies.length / 7);
-      let processedCandies: object[] = [];
-      for (let i: number = 0; i < count; i++)
-        processedCandies.push({ select: i === 0 ? true : false, id: i });
-      setCandyBundle([...processedCandies]);
+    shared ? api.get(`/v1/member/${member_uri}`) : api.get("/v1/login/info")
+      .then((response) => {
+        const count = Math.ceil(response.data.data.candies.length / 7);
+        let processedCandies: object[] = [];
+        for (let i: number = 0; i < count; i++)
+          processedCandies.push({ select: i === 0 ? true : false, id: i });
+        setCandyBundle([...processedCandies]);
     });
   }, []);
 
