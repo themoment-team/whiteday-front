@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import * as P from "./Pages";
 
 const App: React.FC = () => {
@@ -9,6 +9,7 @@ const App: React.FC = () => {
       <Route path="/leaveCandy" element={<P.LeaveCandy />} />
       <Route path="*" element={<P.NotFound />} />
       <Route path="/helloworld" element={<P.HelloWorld />} />
+      <Route path="/:member_uri" element={<P.Share />} />
     </Routes>
   );
 };
