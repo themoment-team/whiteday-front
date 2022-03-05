@@ -15,6 +15,11 @@ export const loggedAtom = atom({
   default: false,
 })
 
+export const sharedAtom = atom({
+  key: 'shared',
+  default: false,
+})
+
 export const isShowMessage = atom({
   key: "isShowMessage",
   default: false,
