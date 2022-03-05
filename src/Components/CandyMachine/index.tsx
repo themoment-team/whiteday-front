@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { machineIndexAtom, isShowMessage, candyIndexAtom } from "../../Atoms";
+import { machineIndexAtom, isShowMessage, candyIndexAtom, sharedAtom } from "../../Atoms";
 import api from "../../lib/api";
+import { useParams } from "react-router-dom";
 
 interface candyType {
   color: string;
@@ -15,17 +16,14 @@ const CandyMachine: React.FC = () => {
   const machineIndex = useRecoilValue(machineIndexAtom);
   const setShow = useSetRecoilState(isShowMessage);
   const setCandyIndex = useSetRecoilState(candyIndexAtom);
+  const shared = useRecoilValue(sharedAtom);
+  const member_uri = useParams().member_uri;
 
   useEffect(() => {
-    api.get("/v1/login/info").then((response) => {
-      setCandies(
-        response.data.data.candies.slice(
-          machineIndex * 7,
-          (1 + machineIndex) * 7,
-        ),
-      );
-      console.log(candies);
-    });
+    shared ? api.get(`/v1/member/${member_uri}`) : api.get("/v1/login/info")
+      .then((response) => {
+        setCandies(response.data.data.candies.slice(machineIndex * 7,(1 + machineIndex) * 7));
+      });
   }, [machineIndex]);
 
   const showCandy = (index: number) => {
