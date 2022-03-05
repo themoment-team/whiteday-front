@@ -66,7 +66,3 @@ export const TitleExplanation = styled.p`
     font-size: 3vw;
   }
 `;
-
-export const CandyMachine = styled.img`
-  width: 100%;
-`;

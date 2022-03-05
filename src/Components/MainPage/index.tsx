@@ -7,6 +7,7 @@ import { isShowMessage, loggedAtom } from "../../Atoms";
 import { useRecoilValue, useRecoilState } from "recoil";
 import Message from "../Message";
 import api from "../../lib/api";
+import { useParams } from "react-router-dom";
 
 const MainPage: React.FC = () => {
   const [username, setUsername] = useState<string>("")
@@ -14,6 +15,7 @@ const MainPage: React.FC = () => {
   const [logged, setLogged] = useRecoilState(loggedAtom)
 
   const show = useRecoilValue(isShowMessage)
+
 
   useEffect(() => {
     api.get("/v1/login/info")
