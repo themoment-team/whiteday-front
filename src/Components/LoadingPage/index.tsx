@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
+
 const LoadingPage = () => {
   const param = useParams().id;
   const [cookies, setCookie] = useCookies(["JSESSIONID"]);
