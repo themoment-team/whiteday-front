@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import device from "../../Shared/Config"
 
 interface candyType {
   color: string
