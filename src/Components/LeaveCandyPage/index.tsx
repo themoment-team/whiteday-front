@@ -15,7 +15,7 @@ export interface CandyI {
 
 function LeaveCandyPage() {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { member_uri } = useParams();
   const [pageNum, setPageNum] = useState(0);
   const [candyData, setCandyData] = useState<CandyI>({
     color: "",
@@ -35,7 +35,7 @@ function LeaveCandyPage() {
         )
           return;
 
-        await api.post(`/v1/candy/${id}`, candyData);
+        await api.post(`/v1/candy/${member_uri}`, candyData);
         navigate("/");
       } catch (e) {
         console.error(e);
