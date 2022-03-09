@@ -13,7 +13,7 @@ const Message: React.FC<{}> = () => {
   const machineIndex = useRecoilValue(machineIndexAtom);
   
   useEffect(() => {
-    api.get(`/v1/candy/${machineIndex * 7 + candyIndex}`)
+    api.get(`/v1/candy/${machineIndex * 7 + candyIndex + 1}`) 
       .then((response) => {
         setName(response.data.data.writer)
         setContent(response.data.data.content)
