@@ -14,7 +14,7 @@ const SharePage: React.FC = () => {
   const [candyAmount, setCandyAmount] = useState<number>(0);
   const [shared, setShared] = useRecoilState(sharedAtom);
 
-  const member_uri = useParams().member_uri;
+  const {member_uri} = useParams();
 
   useEffect(() => {
     api.get(`/v1/member/${member_uri}`)
