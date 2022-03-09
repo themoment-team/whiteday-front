@@ -13,17 +13,17 @@ const CandyList: React.FC = () => {
   const [candyBundle, setCandyBundle] = useState<object[]>([]);
   const setMachineIndex = useSetRecoilState(machineIndexAtom);
   const shared = useRecoilValue(sharedAtom);
-  const member_uri = useParams().member_uri;
+  const {member_uri} = useParams();
 
   useEffect(() => {
-    shared ? api.get(`/v1/member/${member_uri}`) : api.get("/v1/login/info")
+    api.get(shared ? `/v1/member/${member_uri}` : "/v1/login/info")
       .then((response) => {
         const count = Math.ceil(response.data.data.candies.length / 7);
         let processedCandies: object[] = [];
         for (let i: number = 0; i < count; i++)
           processedCandies.push({ select: i === 0 ? true : false, id: i });
         setCandyBundle([...processedCandies]);
-    });
+      });
   }, []);
 
   const select = (id: number) => {
