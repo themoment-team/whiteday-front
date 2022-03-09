@@ -7,7 +7,6 @@ import { isShowMessage, loggedAtom } from "../../Atoms";
 import { useRecoilValue, useRecoilState } from "recoil";
 import Message from "../Message";
 import api from "../../lib/api";
-import { useParams } from "react-router-dom";
 
 const MainPage: React.FC = () => {
   const [username, setUsername] = useState<string>("")
