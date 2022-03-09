@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import axios from "axios";
 
 const LoadingPage = () => {
   const param = useParams().id;
@@ -9,15 +8,11 @@ const LoadingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setCookie("JSESSIONID", param);
+    setCookie("JSESSIONID", param, { path: "/" });
     navigate("/");
   }, []);
 
-  return (
-    <>
-      <h1>로딩중</h1>
-    </>
-  );
+  return <></>;
 };
 
 export default LoadingPage;
