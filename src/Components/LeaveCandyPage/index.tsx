@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import CandyDesign from "./CandyDesign";
 import LeaveMessage from "./LeaveMessage";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ export interface CandyI {
 
 function LeaveCandyPage() {
   const navigate = useNavigate();
+  const { member_uri } = useParams();
   const [pageNum, setPageNum] = useState(0);
   const [candyData, setCandyData] = useState<CandyI>({
     color: "",
@@ -33,7 +35,7 @@ function LeaveCandyPage() {
         )
           return;
 
-        await api.post(`/v1/candy/${"memberUri"}`, candyData);
+        await api.post(`/v1/candy/${member_uri}`, candyData);
         navigate("/");
       } catch (e) {
         console.error(e);
