@@ -4,6 +4,7 @@ import { useSetRecoilState, useRecoilValue } from "recoil";
 import { machineIndexAtom, sharedAtom } from "../../Atoms";
 import api from "../../lib/api";
 import { useParams } from "react-router-dom";
+import {loggedAtom} from "../../Atoms"
 
 interface bundleType {
   select: boolean;
@@ -13,7 +14,8 @@ const CandyList: React.FC = () => {
   const [candyBundle, setCandyBundle] = useState<object[]>([]);
   const setMachineIndex = useSetRecoilState(machineIndexAtom);
   const shared = useRecoilValue(sharedAtom);
-  const {member_uri} = useParams();
+  const { member_uri } = useParams();
+  const logged = useRecoilValue(loggedAtom);
 
   useEffect(() => {
     api.get(shared ? `/v1/member/${member_uri}` : "/v1/login/info")
@@ -39,7 +41,7 @@ const CandyList: React.FC = () => {
 
   return (
     <S.CandyList>
-      {candyBundle.map((bundle: object, index: number) => (
+      {logged && candyBundle.map((bundle: object, index: number) => (
         <S.CandyListIndex
           key={index}
           select={(bundle as bundleType).select}
