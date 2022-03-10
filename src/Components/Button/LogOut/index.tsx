@@ -11,6 +11,7 @@ const LogOutButton: React.FC = () => {
   const LogOut = () => {
     removeCookies("JSESSIONID");
     setLogged(false)
+    window.location.reload();
   }
 
   return (
