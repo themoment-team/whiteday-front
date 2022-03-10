@@ -9,7 +9,7 @@ import * as S from "./style";
 export interface CandyI {
   color: string;
   shape: string;
-  title: string;
+  writer: string;
   message: string;
 }
 
@@ -20,7 +20,7 @@ function LeaveCandyPage() {
   const [candyData, setCandyData] = useState<CandyI>({
     color: "",
     shape: "",
-    title: "",
+    writer: "",
     message: "",
   });
 
@@ -31,12 +31,12 @@ function LeaveCandyPage() {
           !candyData.color ||
           !candyData.shape ||
           !candyData.message ||
-          !candyData.title
+          !candyData.writer
         )
           return;
 
         await api.post(`/v1/candy/${member_uri}`, candyData);
-        navigate("/");
+        navigate(`/${member_uri}`);
       } catch (e) {
         console.error(e);
       }
