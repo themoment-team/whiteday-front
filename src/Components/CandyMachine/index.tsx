@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { machineIndexAtom, isShowMessage, candyIndexAtom, sharedAtom } from "../../Atoms";
+import { machineIndexAtom, isShowMessage, candyIndexAtom, sharedAtom , loggedAtom} from "../../Atoms";
 import api from "../../lib/api";
 import { useParams } from "react-router-dom";
 
@@ -17,13 +17,14 @@ const CandyMachine: React.FC = () => {
   const setShow = useSetRecoilState(isShowMessage);
   const setCandyIndex = useSetRecoilState(candyIndexAtom);
   const shared = useRecoilValue(sharedAtom);
-  const member_uri = useParams().member_uri;
+  const { member_uri } = useParams();
+  const logged = useRecoilValue(loggedAtom);
 
   useEffect(() => {
-    shared ? api.get(`/v1/member/${member_uri}`) : api.get("/v1/login/info")
-      .then((response) => {
-        setCandies(response.data.data.candies.slice(machineIndex * 7,(1 + machineIndex) * 7));
-      });
+    api.get(shared ? `/v1/member/${member_uri}` : "/v1/login/info")
+      .then((response) => 
+        setCandies(response.data.data.candies.slice(machineIndex * 7,(1 + machineIndex) * 7))
+      );
   }, [machineIndex]);
 
   const showCandy = (index: number) => {
@@ -37,7 +38,7 @@ const CandyMachine: React.FC = () => {
     <S.CandyMachine>
       <S.CandyMachineImg src="/Images/CandyMachine.png" />
       <S.CandyBox>
-        {candies.map((candy: object, index: number) => (
+        {logged && candies.map((candy: object, index: number) => (
           <S.Candy
             key={index}
             shape={(candy as candyType).shape}
