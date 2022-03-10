@@ -41,7 +41,7 @@ const CandyList: React.FC = () => {
 
   return (
     <S.CandyList>
-      {logged && candyBundle.map((bundle: object, index: number) => (
+      {(logged || shared) && candyBundle.map((bundle: object, index: number) => (
         <S.CandyListIndex
           key={index}
           select={(bundle as bundleType).select}
