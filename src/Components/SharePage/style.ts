@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import device from "../../Shared/Config";
 
-const desktop = "(min-width: 600px)"
+const desktop = "(min-width: 600px)";
 
-export const MainPage = styled.div`
+export const SharePage = styled.div`
   width: 600px;
   height: 100vh;
   margin: 0 auto;
@@ -23,7 +23,7 @@ export const MainPage = styled.div`
 
 export const Content = styled.div`
   width: 100%;
-`
+`;
 
 export const Explanation = styled.div`
   text-align: center;
@@ -50,19 +50,4 @@ export const CountExplanation = styled.p`
 
 export const Pink = styled.span`
   color: #ff639b;
-`;
-
-export const Title = styled.img`
-  width: 33%;
-  margin: 0 auto;
-`
-
-export const TitleExplanation = styled.p`
-  font-size: 20px;
-  text-align: center;
-  margin: 0;
-  color: #ff639b;
-  @media ${device.mobile} {
-    font-size: 3vw;
-  }
 `;

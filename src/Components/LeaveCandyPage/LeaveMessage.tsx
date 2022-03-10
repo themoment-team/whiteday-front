@@ -14,9 +14,9 @@ const LeaveMessage: React.FC<PropsType> = ({ candyData, changeCandyData }) => {
         type="text"
         placeholder="닉네임을 입력하세요 (10자 이내)"
         maxLength={10}
-        value={candyData.title}
+        value={candyData.writer}
         onChange={(e) =>
-          changeCandyData({ ...candyData, title: e.target.value })
+          changeCandyData({ ...candyData, writer: e.target.value })
         }
       />
       <S.MessageInput

@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-import { isShowMessage } from "../../Atoms";
-import { useRecoilState } from "recoil";
+import { isShowMessage, machineIndexAtom, candyIndexAtom } from "../../Atoms";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import api from "../../lib/api";
 
 const Message: React.FC<{}> = () => {
-  const [show, setShow] = useRecoilState(isShowMessage);
-  const name: string = "화이트데이";
-  const content: string =
-    "달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요 달콤한 한마디를 남겨주세요";
+  const setShow = useSetRecoilState(isShowMessage);
+  const [name, setName] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+  const candyIndex = useRecoilValue(candyIndexAtom);
+  const machineIndex = useRecoilValue(machineIndexAtom);
+  
+  useEffect(() => {
+    api.get(`/v1/candy/${machineIndex * 7 + candyIndex + 1}`) 
+      .then((response) => {
+        setName(response.data.data.writer)
+        setContent(response.data.data.content)
+    });
+  });
 
   return (
     <S.Background>
