@@ -25,7 +25,6 @@ $ yarn build
     - Recoil
     - Styled-components
     - React Cookie
-    - 
 
 * dev tools
     - Visual Studio Code
@@ -34,7 +33,6 @@ $ yarn build
 
 * deploy
      - Vercel
-
 ```
 
 #### Our Project License
