@@ -29,7 +29,7 @@ const CandyMachine: React.FC = () => {
 
   const showCandy = (index: number) => {
     setCandyIndex(index);
-    new Date() < new Date("2022-3-14")
+    new Date() < new Date("2022-3-14") && logged
       ? alert("사탕은 3월 14일에 확인 가능해요!")
       : setShow(true);
   };
@@ -38,7 +38,7 @@ const CandyMachine: React.FC = () => {
     <S.CandyMachine>
       <S.CandyMachineImg src="/Images/CandyMachine.png" />
       <S.CandyBox>
-        {logged && candies.map((candy: object, index: number) => (
+        {(logged || shared) && candies.map((candy: object, index: number) => (
           <S.Candy
             key={index}
             shape={(candy as candyType).shape}
