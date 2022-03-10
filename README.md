@@ -1,5 +1,7 @@
 ## <img src="https://cdn.discordapp.com/attachments/946629381751709696/951424027241615370/1.png" width="1200px"/>
 
+["White Day"]는 나만의 캔디를 커스텀하고, 달콤한 말을 담아 친구의 캔디머신에 캔디를 보내는 프로젝트입니다.
+
 #### GET start
 
 ```
