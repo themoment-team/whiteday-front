@@ -5,7 +5,7 @@ import { useSetRecoilState } from "recoil";
 import { loggedAtom } from "../../../Atoms";
 
 const LogOutButton: React.FC = () => {
-  const [_, __, removeCookies] = useCookies(["JSESSIONID"])
+  const [, , removeCookies] = useCookies(["JSESSIONID"])
   const setLogged = useSetRecoilState(loggedAtom)
 
   const LogOut = () => {
