@@ -16,7 +16,8 @@ const MainPageButton: React.FC = () => {
   }, []);
 
   const copy = () => {
-    navigator.clipboard.writeText(`https://www.givecandy.me/${URI}`);
+    navigator.clipboard.writeText(`https://www.givecandy.me/${URI}`)
+      .then(() => alert("클립보드에 내 캔디머신이 복사되었어요!"))
   };
 
   return (
