@@ -11,7 +11,7 @@ const LogOutButton: React.FC = () => {
 
   const LogOut = () => {
     api.get("/v1/logout").then(() => {
-      removeCookies("JSESSIONID", { paht: "/" });
+      removeCookies("JSESSIONID", { path: "/" });
       setLogged(false);
       window.location.reload();
     });
