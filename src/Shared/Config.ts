@@ -7,6 +7,6 @@ const device = {
 };
 
 export const baseUrl =
-  "http://server.givecandy.me:8080";
+  "https://server.givecandy.me";
 
 export default device;
