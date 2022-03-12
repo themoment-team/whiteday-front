@@ -20,7 +20,7 @@ export const CandyBox = styled.div`
   width: 37%;
   height: 22.5%;
   position: absolute;
-  top: 30%;
+  top: 29%;
   @media (min-width: 600px){
     width: 220px;
     height: 240px;
@@ -29,17 +29,18 @@ export const CandyBox = styled.div`
 
 export const Candy = styled.div<candyType>`
   width: 21%;
-  height: 12%;
+  height: 19%;
   font-size: 8px;
   border-radius: 100%;
   text-align: center;
   background-color: ${({ color }) => color};
-  background-image: ${({shape}) => shape !== "none" && `url("/Images/candyShape/${shape}.png")`};
+  background-image: ${({ shape }) =>
+    shape !== "none" && `url("/Images/candyShape/${shape}.png")`};
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
   display: inline-block;
-  padding-top: 7%;
+  overflow: hidden;
   color: #885252;
   ${({ index }) => {
     switch (index) {
@@ -60,3 +61,11 @@ export const Candy = styled.div<candyType>`
     }
   }}
 `;
+
+export const Text = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

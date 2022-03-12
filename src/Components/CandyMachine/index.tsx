@@ -18,7 +18,7 @@ const CandyMachine: React.FC = () => {
   const setCandyIndex = useSetRecoilState(candyIndexAtom);
   const shared = useRecoilValue(sharedAtom);
   const { member_uri } = useParams();
-  const logged = useRecoilValue(loggedAtom);
+  const logged = useRecoilValue(loggedAtom)
 
   useEffect(() => {
     api.get(shared ? `/v1/member/${member_uri}` : "/v1/login/info")
@@ -38,17 +38,18 @@ const CandyMachine: React.FC = () => {
     <S.CandyMachine>
       <S.CandyMachineImg src="/Images/CandyMachine.png" />
       <S.CandyBox>
-        {(logged || shared) && candies.map((candy: object, index: number) => (
-          <S.Candy
-            key={index}
-            shape={(candy as candyType).shape}
-            color={`#${(candy as candyType).color}`}
-            index={index}
-            onClick={() => showCandy(index)}
-          >
-            {(candy as candyType).writer}
-          </S.Candy>
-        ))}
+        {(logged || shared) &&
+          candies.map((candy: object, index: number) => (
+            <S.Candy
+              key={index}
+              shape={(candy as candyType).shape}
+              color={`#${(candy as candyType).color}`}
+              index={index}
+              onClick={() => showCandy(index)}
+            >
+              <S.Text>{(candy as candyType).writer}</S.Text>
+            </S.Candy>
+          ))}
       </S.CandyBox>
     </S.CandyMachine>
   );
