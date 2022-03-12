@@ -16,7 +16,7 @@ const MainPageButton: React.FC = () => {
   }, []);
 
   const copy = () => {
-    navigator.clipboard.writeText(`https://givecandy.me/${URI}`);
+    navigator.clipboard.writeText(`https://www.givecandy.me/${URI}`);
   };
 
   return (

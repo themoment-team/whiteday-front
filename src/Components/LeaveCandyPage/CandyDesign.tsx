@@ -58,7 +58,7 @@ const CandyDesign: React.FC<PropsType> = ({
               onClick={() => changeCandyData({ ...candyData, shape })}
               style={{
                 background: `#${candyData.color}`,
-                backgroundImage: `url(/images/candyShape/${shape}.png)`,
+                backgroundImage: `url(/Images/candyShape/${shape}.png)`,
                 backgroundPosition: "center",
               }}
               focus={shape === candyData.shape}
