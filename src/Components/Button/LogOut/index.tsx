@@ -10,14 +10,13 @@ const LogOutButton: React.FC = () => {
   const setLogged = useSetRecoilState(loggedAtom);
 
   const LogOut = () => {
-    removeCookies("JSESSIONID", { path: "/" });
-    setLogged(false);
-    window.location.reload();
-
     api
       .get("/v1/logout")
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+    removeCookies("JSESSIONID", { path: "/" });
+    setLogged(false);
+    window.location.reload();
   };
 
   return <S.LogOutButton onClick={LogOut}>로그아웃</S.LogOutButton>;
