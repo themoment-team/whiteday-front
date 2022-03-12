@@ -3,15 +3,20 @@ import * as S from "./style"
 import { useCookies } from "react-cookie";
 import { useSetRecoilState } from "recoil";
 import { loggedAtom } from "../../../Atoms";
+import api from "../../../lib/api";
 
 const LogOutButton: React.FC = () => {
   const [, , removeCookies] = useCookies(["JSESSIONID"])
   const setLogged = useSetRecoilState(loggedAtom)
 
   const LogOut = () => {
-    removeCookies("JSESSIONID");
-    setLogged(false)
-    window.location.reload();
+    api.get("/v1/logout")
+      .then(() => {
+        removeCookies("JSESSIONID");
+        setLogged(false);
+        window.location.reload();
+      }
+    )
   }
 
   return (
