@@ -5,3 +5,4 @@ export { default as HelloWorldPage } from "./HelloWorldPage";
 export { default as SharePage } from "./SharePage";
 export { default as LoadingPage } from "./LoadingPage";
 export { default as LoginErrorPage } from "./LoginErrorPage"
+export { default as WaitingPage } from "./WaitingPage";
