@@ -5,4 +5,5 @@ export { default as NotFound } from "./NotFound";
 export { default as HelloWorld } from "./HelloWorld";
 export { default as Share } from "./Share"
 export { default as Loading } from "./Loading";
+export { default as LoginError } from "./LoginError"
 export {default as Waiting} from "./Waiting"

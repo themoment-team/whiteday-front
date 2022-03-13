@@ -9,6 +9,7 @@ const App: React.FC = () => {
       <Route path="/:member_uri/leaveCandy" element={<P.LeaveCandy />} />
       <Route path="*" element={<P.NotFound />} />
       <Route path="/helloworld" element={<P.HelloWorld />} />
+      <Route path="/loginError" element={<P.LoginError />}/>
       <Route path="/:member_uri" element={<P.Share />} />
       <Route path="/loading/:id" element={<P.Loading />} />
     </Routes>
