@@ -5,7 +5,7 @@ import CandyList from "../CandyList";
 import SharePageButton from "../Button/SharePage";
 import api from "../../lib/api";
 import { useParams } from "react-router-dom";
-import { NotFound } from "../../Pages";
+import { NotFound, Waiting } from "../../Pages";
 import { sharedAtom } from "../../Atoms";
 import { useRecoilState } from "recoil";
 
@@ -13,6 +13,7 @@ const SharePage: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [candyAmount, setCandyAmount] = useState<number>(0);
   const [shared, setShared] = useRecoilState(sharedAtom);
+  const [notFound, setNotFound] = useState<boolean>(false)
 
   const {member_uri} = useParams();
 
@@ -25,6 +26,7 @@ const SharePage: React.FC = () => {
       })
       .catch(error => {
         setShared(false)
+        setNotFound(true)
       })
   })
 
@@ -50,7 +52,7 @@ const SharePage: React.FC = () => {
           </S.Content>
         </S.SharePage>
       ) : (
-        <NotFound />
+        notFound ? <NotFound /> :  <Waiting />
       )}
     </>
   );
