@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { machineIndexAtom, isShowMessage, candyIndexAtom, sharedAtom , loggedAtom} from "../../Atoms";
+import {
+  machineIndexAtom,
+  isShowMessage,
+  candyIndexAtom,
+  sharedAtom,
+  loggedAtom,
+} from "../../Atoms";
 import api from "../../lib/api";
 import { useParams } from "react-router-dom";
 
@@ -18,19 +24,25 @@ const CandyMachine: React.FC = () => {
   const setCandyIndex = useSetRecoilState(candyIndexAtom);
   const shared = useRecoilValue(sharedAtom);
   const { member_uri } = useParams();
-  const logged = useRecoilValue(loggedAtom)
+  const logged = useRecoilValue(loggedAtom);
 
   useEffect(() => {
-    api.get(shared ? `/v1/member/${member_uri}` : "/v1/login/info")
-      .then((response) => 
-        setCandies(response.data.data.candies.slice(machineIndex * 7,(1 + machineIndex) * 7))
+    api
+      .get(shared ? `/v1/member/${member_uri}` : "/v1/login/info")
+      .then((response) =>
+        setCandies(
+          response.data.data.candies.slice(
+            machineIndex * 7,
+            (1 + machineIndex) * 7,
+          ),
+        ),
       );
   }, [machineIndex]);
 
   const showCandy = (index: number) => {
     setCandyIndex(index);
-    new Date() < new Date("2022-3-14") && logged
-      ? alert("사탕은 3월 14일에 확인 가능해요!")
+    new Date() < new Date("2022-3-17") && logged
+      ? alert("사탕은 3월 17일에 확인 가능해요!")
       : setShow(true);
   };
 
