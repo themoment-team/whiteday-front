@@ -25,6 +25,9 @@ export const Content = styled.div`
 `;
 
 export const Text = styled.div`
-  font-size: 3vh;
+  font-size: 30px;
   color: #FD5793;
+  @media ${device.mobile}{
+    font-size: 5vw;
+  }
 `;

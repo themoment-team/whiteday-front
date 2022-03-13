@@ -5,7 +5,7 @@ const WaitingPage: React.FC = () => {
   return (
     <S.WaitingPage>
       <S.Content>
-        <S.Text>잠시만요...</S.Text>
+        <S.Text>캔디머신을 청소 중 이에요...</S.Text>
       </S.Content>
     </S.WaitingPage>
   );
