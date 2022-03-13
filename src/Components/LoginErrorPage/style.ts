@@ -38,4 +38,5 @@ export const Text = styled.div`
 
 export const Home = styled.div`
   color: #fd5793;
+  margin-top: 30px;
 `;
