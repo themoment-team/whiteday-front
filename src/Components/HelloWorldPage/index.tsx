@@ -11,16 +11,10 @@ const HelloWorldPage: React.FC = () => {
       </S.Title>
       <S.LoginBox>
         <S.SubTitle>로그인</S.SubTitle>
-        <a href={`${baseUrl}/oauth2/authorization/github`}>
-          <S.LoginButton>
-            <I.GithubLogo />
-            <S.Name>GitHub로 로그인 하기</S.Name>
-          </S.LoginButton>
-        </a>
         <a href={`${baseUrl}/oauth2/authorization/google`}>
           <S.LoginButton>
             <I.GoogleLogo />
-            <S.Name>Google로 로그인 하기</S.Name>
+            <p>Google로 로그인 하기</p>
           </S.LoginButton>
         </a>
         <div className="MiniCandy">

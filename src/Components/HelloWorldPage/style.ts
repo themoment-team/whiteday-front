@@ -65,7 +65,7 @@ export const LoginBox = styled.div`
 `;
 
 export const SubTitle = styled.div`
-  margin: 45px 0 60px;
+  margin: 45px 0 100px;
   text-align: center;
   font-size: 25px;
   color: #ffffff;
@@ -73,7 +73,7 @@ export const SubTitle = styled.div`
 
   @media (max-width: 450px) {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -83,12 +83,16 @@ export const LoginButton = styled.div`
   background: #ffffff;
   border: 3px dashed rgba(134, 79, 79, 0.98);
   border-radius: 30px;
-  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 
+  p {
+    color: #fd5793;
+    font-size: 13px;
+    margin-left: 18px;
+  }
   @media ${device.mobile} {
     width: 350px;
   }
@@ -96,15 +100,8 @@ export const LoginButton = styled.div`
   @media (max-width: 450px) {
     width: 280px;
     height: 38px;
-
     svg {
       width: 30px;
     }
   }
-`;
-
-export const Name = styled.span`
-  color: #fd5793;
-  font-size: 13px;
-  margin-left: 18px;
 `;
