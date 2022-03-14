@@ -18,7 +18,7 @@ const MainPageButton: React.FC = () => {
 
   const copy = () => {
     navigator.clipboard.writeText(`https://www.givecandy.me/${URI}`).then(() =>
-      toast.success("클립보드에 내 캔디머신이 복사되었어요!", {
+      toast.success("클립보드에 내 캔디머신이 복사됐어요!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
