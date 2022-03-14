@@ -10,7 +10,7 @@ export interface CandyI {
   color: string;
   shape: string;
   writer: string;
-  message: string;
+  content: string;
 }
 
 function LeaveCandyPage() {
@@ -21,7 +21,7 @@ function LeaveCandyPage() {
     color: "",
     shape: "",
     writer: "",
-    message: "",
+    content: "",
   });
 
   const onClick = async () => {
@@ -30,7 +30,7 @@ function LeaveCandyPage() {
         if (
           !candyData.color ||
           !candyData.shape ||
-          !candyData.message ||
+          !candyData.content ||
           !candyData.writer
         )
           return;

@@ -22,9 +22,9 @@ const LeaveMessage: React.FC<PropsType> = ({ candyData, changeCandyData }) => {
       <S.MessageInput
         placeholder="달콤한 한 마디를 남겨주세요&#13;&#10;(150자 이내)"
         maxLength={150}
-        value={candyData.message}
+        value={candyData.content}
         onChange={(e) =>
-          changeCandyData({ ...candyData, message: e.target.value })
+          changeCandyData({ ...candyData, content: e.target.value })
         }
       />
     </S.Circle>
