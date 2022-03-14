@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { loggedAtom } from "../../../Atoms";
 import api from "../../../lib/api";
+import { toast } from "react-toastify";
 
 const MainPageButton: React.FC = () => {
   const logged = useRecoilValue(loggedAtom);
@@ -16,8 +17,17 @@ const MainPageButton: React.FC = () => {
   }, []);
 
   const copy = () => {
-    navigator.clipboard.writeText(`https://www.givecandy.me/${URI}`)
-      .then(() => alert("클립보드에 내 캔디머신이 복사되었어요!"))
+    navigator.clipboard.writeText(`https://www.givecandy.me/${URI}`).then(() =>
+      toast.success("클립보드에 내 캔디머신이 복사되었어요!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      }),
+    );
   };
 
   return (
