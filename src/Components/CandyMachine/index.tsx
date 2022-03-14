@@ -10,6 +10,7 @@ import {
 } from "../../Atoms";
 import api from "../../lib/api";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 interface candyType {
   color: string;
@@ -42,7 +43,15 @@ const CandyMachine: React.FC = () => {
   const showCandy = (index: number) => {
     setCandyIndex(index);
     new Date() < new Date("2022-3-17") && logged
-      ? alert("사탕은 3월 17일에 확인 가능해요!")
+      ? toast.info("사탕은 3월 17일에 확인 가능해요!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        })
       : setShow(true);
   };
 

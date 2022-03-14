@@ -31,7 +31,7 @@ function LeaveCandyPage() {
           !candyData.color ||
           !candyData.shape ||
           !candyData.content ||
-          !candyData.writer
+          !candyData.writer.trim()
         )
           return;
 
