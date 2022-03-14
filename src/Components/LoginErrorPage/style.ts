@@ -36,7 +36,8 @@ export const Text = styled.div`
   color: #885252;
 `;
 
-export const Home = styled.div`
+export const Home = styled.a`
+  display: inline-block;
   color: #fd5793;
   margin-top: 30px;
 `;
