@@ -31,9 +31,9 @@ const MainPageButton: React.FC = () => {
   };
 
   return (
-    <S.Button>
+    <S.Button logged={logged}>
       {logged ? (
-        <S.Desc onClick={copy}>캔디 머신 공유하기</S.Desc>
+        <S.Desc>캔디를 나눌 수 있는 기간이 종료되었어요</S.Desc>
       ) : (
         <Link to="/helloWorld">
           <S.Desc>내 캔디 머신 만들러가기</S.Desc>
