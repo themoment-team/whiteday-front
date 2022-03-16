@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import device from "../../../Shared/Config";
 
-export const Button = styled.div`
+interface loggedType{
+  logged: boolean
+}
+
+export const Button = styled.div<loggedType>`
   width: 90%;
   height: 70px;
   background-color: #fd5793;
@@ -9,7 +13,7 @@ export const Button = styled.div`
   border-radius: 30px;
   box-shadow: 0 5px 0px #FFFFFF;
   &:hover {
-    cursor: pointer;
+    cursor: ${({logged}) => !logged && "pointer"};
   }
   @media ${device.mobile}{
     height: 6vh;
