@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import * as I from "../../Assets/SVG";
-import { isShowMessage, machineIndexAtom, candyIndexAtom } from "../../Atoms";
+import { isShowMessage, candyIndexAtom } from "../../Atoms";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import api from "../../lib/api";
 
@@ -10,10 +10,9 @@ const Message: React.FC<{}> = () => {
   const [name, setName] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const candyIndex = useRecoilValue(candyIndexAtom);
-  const machineIndex = useRecoilValue(machineIndexAtom);
   
   useEffect(() => {
-    api.get(`/v1/candy/${machineIndex * 7 + candyIndex + 1}`) 
+    api.get(`/v1/candy/${candyIndex}`) 
       .then((response) => {
         setName(response.data.data.writer)
         setContent(response.data.data.content)

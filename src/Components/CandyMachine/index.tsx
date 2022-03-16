@@ -16,6 +16,7 @@ interface candyType {
   color: string;
   writer: string;
   shape: string;
+  candyId: number
 }
 
 const CandyMachine: React.FC = () => {
@@ -66,7 +67,7 @@ const CandyMachine: React.FC = () => {
               shape={(candy as candyType).shape}
               color={`#${(candy as candyType).color}`}
               index={index}
-              onClick={() => showCandy(index)}
+              onClick={() => showCandy((candy as candyType).candyId)}
             >
               <S.Text>{(candy as candyType).writer}</S.Text>
             </S.Candy>
