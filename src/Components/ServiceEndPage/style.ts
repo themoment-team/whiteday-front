@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import device from "../../Shared/Config";
 
-const maxHeight1000 = "(max-height: 1000px) and (min-width: 600px)";
-const maxHeight770 = "(max-height: 770px) and (min-width: 600px)";
+const desktop = "(min-width: 600px)";
 
 export const ServiceEndPage = styled.div`
   width: 600px;
@@ -10,43 +9,34 @@ export const ServiceEndPage = styled.div`
   margin: 0 auto;
   background-color: #ffecdb;
   box-shadow: 4px 4px 100px 50px rgba(253, 87, 147, 0.25);
+  display: flex;
+  align-items: center;
   @media ${device.mobile} {
     width: 100vw;
   }
-  display: flex;
-  align-items: center;
+  @media ${desktop} {
+    min-height: 700px;
+  }
 `;
 
 export const ContentBox = styled.div`
   border-top: 5px dashed #885252;
   border-bottom: 5px dashed #885252;
   width: 100%;
-  height: 92vh;
-  position: relative;
+  height: 92%;
+  display: flex;
+  align-items: flex-end;
   @media ${device.mobile} {
-    display: flex;
     align-items: center;
   }
-  @media ${maxHeight770} {
-    display: flex;
+  @media ${desktop} and (max-height: 700px) {
     align-items: center;
   }
 `;
 
 export const Content = styled.div`
   width: 100%;
-  height: 70vh;
-  position: relative;
-  top: 23%;
-  @media ${maxHeight1000} {
-    height: 75%;
-    top: 20%;
-  }
-  @media ${maxHeight770} {
-    height: 80%;
-    top: 0;
-  }
-  @media ${device.mobile}{
+  @media ${device.mobile} {
     top: 0;
   }
 `;
@@ -56,12 +46,11 @@ export const Logo = styled.img`
   display: block;
   margin: 0 auto;
   position: relative;
-`
+`;
 
 export const Explaination = styled.p`
-  margin: 0;
-  position: relative;
-  top: 3%;
+  margin-top: 3vh;
+  margin-bottom: 0;
   color: #885252;
   font-weight: 700;
   text-align: center;
@@ -73,15 +62,9 @@ export const Explaination = styled.p`
 
 export const TeamExplainationBox = styled.div`
   color: #885252;
-  position: relative;
-  top: 30%;
+  margin-top: 18vh;
+  margin-bottom: 3vh;
   font-size: 10px;
-  @media ${maxHeight1000} {
-    top: 20%;
-  }
-  @media ${maxHeight770} {
-    top: 15%;
-  }
   @media ${device.mobile} {
     top: 30%;
   }
@@ -90,16 +73,16 @@ export const TeamExplainationBox = styled.div`
 export const TeamExplaination = styled.div`
   width: 210px;
   margin: 0 auto;
-  p{
+  p {
     margin: 0;
   }
-`
+`;
 
 export const TeamName = styled.p`
   position: relative;
   bottom: 52px;
   display: inline-block;
-`
+`;
 
 export const ExplainMembers = styled.p`
   position: relative;
